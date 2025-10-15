@@ -89,7 +89,7 @@ export default function Hero() {
               </a>
               <a
                 aria-label="LinkedIn"
-                href="#"
+                href="https://www.linkedin.com/in/achini-pramodhya-24a555318/"
                 className="hover:text-blue-500 transition-colors"
               >
                 <FaLinkedin />
@@ -104,29 +104,33 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Visual Element */}
-          <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl blur-2xl opacity-20 animate-pulse" />
-            <div className="relative aspect-square rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 p-1">
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:16px_16px]" />
-              <div className="h-full w-full rounded-xl bg-white dark:bg-zinc-900 p-6 relative overflow-hidden">
-                <div className="absolute -right-4 -bottom-4 w-48 h-48 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full blur-3xl opacity-25" />
-                <div className="relative h-full w-full rounded-lg border-2 border-gray-200 dark:border-gray-800 overflow-hidden">
-                  <img
-                    src="/profile.jpg"
-                    alt="Achini Pramodhya"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
+          {/* Creative Visual Element (no profile image) */}
+          <div className="relative flex items-center justify-center min-h-[340px]">
+            {/* Animated Gradient Blob */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-72 h-72 rounded-full bg-gradient-to-br from-blue-500 via-indigo-500 to-pink-500 blur-3xl opacity-40 animate-pulse scale-110" />
+            </div>
+            {/* Floating Tech Icons */}
+            <div className="absolute left-4 top-8 animate-float-slow">
+              <FiServer className="text-5xl text-blue-400 drop-shadow-lg" />
+            </div>
+            <div className="absolute right-8 top-12 animate-float">
+              <FiDatabase className="text-5xl text-green-400 drop-shadow-lg" />
+            </div>
+            <div className="absolute left-10 bottom-8 animate-float-1">
+              <FiLayers className="text-5xl text-purple-400 drop-shadow-lg" />
+            </div>
+            <div className="absolute right-10 bottom-8 animate-float-2">
+              <FiCode className="text-5xl text-pink-400 drop-shadow-lg" />
+            </div>
+            {/* Centered Code Symbol */}
+            <div className="relative z-10 flex flex-col items-center justify-center">
+              <div className="rounded-2xl bg-white/80 dark:bg-zinc-900/80 shadow-xl p-10 flex flex-col items-center border-2 border-blue-100 dark:border-zinc-800">
+                <FiCode className="text-6xl text-blue-500 mb-2 animate-pulse" />
+                <span className="text-lg font-semibold text-blue-600 dark:text-blue-400 tracking-wide">
+                  Creative Coding
+                </span>
               </div>
-            </div>
-
-            {/* Floating Elements */}
-            <div className="absolute -right-4 top-1/4 animate-float-slow">
-              <FiCode className="text-4xl text-blue-500" />
-            </div>
-            <div className="absolute -left-4 bottom-1/4 animate-float">
-              <FiDatabase className="text-4xl text-green-500" />
             </div>
           </div>
         </div>
