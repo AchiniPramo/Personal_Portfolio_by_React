@@ -4,194 +4,158 @@ import {
   FiMail,
   FiGithub,
   FiLinkedin,
-  FiInstagram,
-  FiFacebook,
+  FiCode,
+  FiGlobe,
   FiServer,
   FiDatabase,
-  FiLayers
+  FiLayers,
 } from "react-icons/fi";
 
 export default function About() {
-  const skills = [
-    {
-      category: "Backend Development",
-      icon: <FiServer className="text-blue-500" size={24} />,
-      items: [
-        { name: "Node.js", level: 85 },
-        { name: "Express.js", level: 80 },
-        { name: "Java", level: 85 },
-        { name: "RESTful APIs", level: 90 },
-        { name: "Microservices", level: 80 }
-      ]
-    },
-    {
-      category: "Database & Storage",
-      icon: <FiDatabase className="text-green-500" size={24} />,
-      items: [
-        { name: "MongoDB", level: 85 },
-        { name: "MySQL", level: 80 },
-        { name: "PostgreSQL", level: 75 },
-        { name: "Redis", level: 70 },
-        { name: "Database Design", level: 85 }
-      ]
-    },
-    {
-      category: "Frontend Development",
-      icon: <FiLayers className="text-purple-500" size={24} />,
-      items: [
-        { name: "React.js", level: 85 },
-        { name: "JavaScript/ES6+", level: 90 },
-        { name: "HTML5/CSS3", level: 85 },
-        { name: "Responsive Design", level: 80 }
-      ]
-    },
-    {
-      category: "DevOps & Tools",
-      icon: <FiServer className="text-red-500" size={24} />,
-      items: [
-        { name: "Git/GitHub", level: 85 },
-        { name: "Docker", level: 75 },
-        { name: "CI/CD", level: 70 },
-        { name: "AWS", level: 75 }
-      ]
-    }
-  ];
-
   return (
-    <section id="about" className="py-24 relative overflow-hidden">
-      {/* Decorative background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-50/5 dark:via-blue-900/5 to-transparent" />
-      <div className="absolute inset-0 grid grid-cols-8 gap-4 -skew-y-12 opacity-5">
-        {[...Array(32)].map((_, i) => (
-          <div
-            key={i}
-            className="h-32 bg-gradient-to-b from-blue-500/20 to-transparent"
-          />
-        ))}
-      </div>
+    <section
+      id="about"
+      className="relative py-24 bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950 overflow-hidden"
+    >
+      {/* Animated background gradient orbs */}
+      <div className="absolute -top-32 -right-40 w-96 h-96 bg-blue-300/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-pulse" />
 
-      <div className="max-w-7xl mx-auto px-6 relative">
-        {/* Introduction Section */}
-        <div className="max-w-3xl mb-16">
-          <h2 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400">
-            About Me
-          </h2>
-          <div className="prose prose-lg dark:prose-invert">
-            <p className="leading-relaxed">
-              Hello! I'm Achini Pramodhya, a passionate Full Stack Developer
-              with expertise in building end-to-end web applications. I
-              specialize in creating robust backend systems, efficient
-              databases, and intuitive user interfaces.
-            </p>
-            <p className="leading-relaxed">
-              My approach combines strong backend architecture with seamless
-              frontend experiences. I'm proficient in developing RESTful APIs,
-              designing database schemas, implementing authentication systems,
-              and creating responsive user interfaces.
-            </p>
-          </div>
-        </div>
-
-        {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {skills.map((skillSet, index) => (
-            <div
-              key={skillSet.category}
-              className="bg-white dark:bg-zinc-900 rounded-xl p-6 shadow-lg dark:shadow-zinc-900/30"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                {skillSet.icon}
-                <h3 className="text-xl font-semibold">{skillSet.category}</h3>
-              </div>
-              <div className="space-y-4">
-                {skillSet.items.map((skill) => (
-                  <div key={skill.name} className="space-y-2">
-                    <div className="flex justify-between text-sm">
-                      <span className="font-medium">{skill.name}</span>
-                      <span className="text-gray-600 dark:text-gray-400">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="h-2 bg-gray-100 dark:bg-zinc-800 rounded-full overflow-hidden">
-                      <div
-                        className={`h-full rounded-full transition-all duration-1000 ${
-                          index === 0
-                            ? "bg-gradient-to-r from-blue-500 to-blue-600"
-                            : index === 1
-                            ? "bg-gradient-to-r from-green-500 to-green-600"
-                            : index === 2
-                            ? "bg-gradient-to-r from-purple-500 to-purple-600"
-                            : "bg-gradient-to-r from-red-500 to-red-600"
-                        }`}
-                        style={{ width: `${skill.level}%` }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
+      <div className="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+        {/* Profile Section */}
+        <div className="flex flex-col items-center text-center lg:text-left">
+          <div className="relative">
+            <div className="w-56 h-56 rounded-full overflow-hidden shadow-2xl ring-4 ring-blue-500/30">
+              <img
+                src="/profile.jpg"
+                alt="Achini Pramodhya"
+                className="object-cover w-full h-full"
+              />
             </div>
-          ))}
+            <div className="absolute -bottom-4 -right-4 bg-blue-600 text-white p-3 rounded-full shadow-lg animate-bounce">
+              <FiCode size={24} />
+            </div>
+          </div>
+
+          <h2 className="mt-8 text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+            Achini Pramodhya
+          </h2>
+          <p className="mt-2 text-lg text-gray-600 dark:text-gray-400">
+            Full Stack Developer
+          </p>
+
+          <p className="mt-6 max-w-md text-gray-700 dark:text-gray-300 leading-relaxed">
+            A passionate full-stack developer who loves crafting interactive
+            digital experiences. I blend creative design with strong backend
+            logic to build seamless, scalable, and user-focused web
+            applications.
+          </p>
+
+          <div className="mt-8 flex gap-5 justify-center lg:justify-start">
+            <a
+              href="https://github.com/AchiniPramo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-white dark:bg-zinc-800 shadow-md hover:shadow-lg hover:text-blue-600 transition-all"
+            >
+              <FiGithub size={22} />
+            </a>
+            <a
+              href="https://linkedin.com/in/achini-pramodhya"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-white dark:bg-zinc-800 shadow-md hover:shadow-lg hover:text-blue-600 transition-all"
+            >
+              <FiLinkedin size={22} />
+            </a>
+            <a
+              href="mailto:achini@gmail.com"
+              className="p-3 rounded-full bg-white dark:bg-zinc-800 shadow-md hover:shadow-lg hover:text-blue-600 transition-all"
+            >
+              <FiMail size={22} />
+            </a>
+          </div>
+
+          <div className="mt-10">
+            <a
+              href="/cv.pdf"
+              download
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium hover:scale-105 transition-transform"
+            >
+              <FiDownload /> Download Resume
+            </a>
+          </div>
         </div>
 
-        {/* Additional Info */}
-        <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bg-white dark:bg-zinc-900 p-6 rounded-xl">
-            <h4 className="font-semibold mb-2">Location</h4>
-            <p className="text-gray-600 dark:text-gray-400">Sri Lanka</p>
-          </div>
-          <div className="bg-white dark:bg-zinc-900 p-6 rounded-xl">
-            <h4 className="font-semibold mb-2">Role</h4>
-            <p className="text-gray-600 dark:text-gray-400">
-              Full Stack Developer
-            </p>
-          </div>
-          <div className="bg-white dark:bg-zinc-900 p-6 rounded-xl">
-            <h4 className="font-semibold mb-2">Languages</h4>
-            <p className="text-gray-600 dark:text-gray-400">English, Sinhala</p>
-          </div>
-          <div className="bg-white dark:bg-zinc-900 p-6 rounded-xl">
-            <h4 className="font-semibold mb-2">Availability</h4>
-            <p className="text-gray-600 dark:text-gray-400">
-              Open to Opportunities
-            </p>
-          </div>
-        </div>
+        {/* Skill Section */}
+        <div className="grid gap-6">
+          <h3 className="text-3xl font-semibold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600">
+            What I Do
+          </h3>
 
-        {/* Social Links */}
-        <div className="mt-12 flex justify-center gap-6">
-          <a
-            href="https://github.com/AchiniPramo"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors"
-          >
-            <FiGithub size={24} />
-          </a>
-          <a
-            href="https://linkedin.com/in/achini-pramodhya"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors"
-          >
-            <FiLinkedin size={24} />
-          </a>
-          <a
-            href="mailto:achini@gmail.com"
-            className="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors"
-          >
-            <FiMail size={24} />
-          </a>
-        </div>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {/* Card 1 */}
+            <div className="p-6 bg-white/60 dark:bg-zinc-900 rounded-2xl shadow-md hover:shadow-xl transition-all">
+              <div className="flex items-center gap-3 mb-3">
+                <FiServer className="text-blue-600" size={22} />
+                <h4 className="text-lg font-semibold">Backend Development</h4>
+              </div>
+              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                Building scalable APIs and microservices using Java, Node.js,
+                and Spring Boot, ensuring high performance and secure
+                architecture.
+              </p>
+            </div>
 
-        {/* Resume Download */}
-        <div className="mt-8 flex justify-center">
-          <a
-            href="/cv.pdf"
-            download
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 text-white font-medium hover:from-blue-700 hover:to-blue-600 transition-colors"
-          >
-            <FiDownload /> Download Resume
-          </a>
+            {/* Card 2 */}
+            <div className="p-6 bg-white/60 dark:bg-zinc-900 rounded-2xl shadow-md hover:shadow-xl transition-all">
+              <div className="flex items-center gap-3 mb-3">
+                <FiDatabase className="text-green-600" size={22} />
+                <h4 className="text-lg font-semibold">Database Management</h4>
+              </div>
+              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                Designing optimized data models and managing SQL & NoSQL
+                databases like MySQL and MongoDB with a focus on efficiency.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="p-6 bg-white/60 dark:bg-zinc-900 rounded-2xl shadow-md hover:shadow-xl transition-all">
+              <div className="flex items-center gap-3 mb-3">
+                <FiLayers className="text-purple-600" size={22} />
+                <h4 className="text-lg font-semibold">Frontend Engineering</h4>
+              </div>
+              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                Crafting dynamic, responsive interfaces using React, Tailwind,
+                and JavaScript for intuitive user experiences.
+              </p>
+            </div>
+
+            {/* Card 4 */}
+            <div className="p-6 bg-white/60 dark:bg-zinc-900 rounded-2xl shadow-md hover:shadow-xl transition-all">
+              <div className="flex items-center gap-3 mb-3">
+                <FiGlobe className="text-pink-600" size={22} />
+                <h4 className="text-lg font-semibold">DevOps & Cloud</h4>
+              </div>
+              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                Streamlining deployments with GitHub Actions, Docker, and AWS to
+                deliver reliable and automated CI/CD workflows.
+              </p>
+            </div>
+          </div>
+
+          {/* Extra Info */}
+          <div className="mt-10 flex flex-wrap gap-4 text-sm">
+            <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full font-medium">
+              🌍 Based in Sri Lanka
+            </span>
+            <span className="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full font-medium">
+              💼 Open to Opportunities
+            </span>
+            <span className="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full font-medium">
+              💬 English & Sinhala
+            </span>
+          </div>
         </div>
       </div>
     </section>
