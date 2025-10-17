@@ -110,9 +110,8 @@ export default function About() {
               </p>
 
               <p className="max-w-lg text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
-                Transforming ideas into digital reality through innovative fullstack solutions.
-                I architect end-to-end applications that seamlessly blend stunning user experiences
-                with robust, scalable backend systems.
+                🌟 Crafting digital magic from code to cloud! I blend creativity with cutting-edge tech
+                to build fullstack solutions that captivate users and scale effortlessly.
               </p>
             </div>
 
@@ -154,64 +153,48 @@ export default function About() {
 
           {/* Enhanced Skills Section */}
           <div className="space-y-8">
-            <div className="text-center lg:text-left">
-              <h3 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600">
-                Fullstack Expertise
-              </h3>
-              <p className="text-lg text-gray-600 dark:text-gray-400">
-                Bridging creativity with technology across the entire development stack
-              </p>
-            </div>
+           <div className="text-center lg:text-left">
+             <h3 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600">
+               🛠️ Tech Superpowers
+             </h3>
+             <p className="text-lg text-gray-600 dark:text-gray-400">
+               Where innovation meets implementation - turning wild ideas into reality!
+             </p>
+           </div>
 
             <div className="grid sm:grid-cols-2 gap-6">
               {[
                 {
                   icon: FiServer,
-                  title: "Backend Architecture",
-                  description: "Building robust APIs and microservices with Java, Node.js, and Spring Boot for high-performance, secure systems.",
+                  title: "Fullstack Wizardry",
+                  description: "🚀 Building epic applications from database to UI with Java, Node.js, and cutting-edge frameworks.",
                   color: "from-blue-500 to-cyan-500",
                   bgColor: "hover:shadow-blue-500/20",
-                  technologies: ["Java", "Node.js", "Spring Boot", "REST APIs"]
-                },
-                {
-                  icon: FiDatabase,
-                  title: "Database Design",
-                  description: "Crafting optimized data architectures and managing SQL/NoSQL databases for efficient, scalable solutions.",
-                  color: "from-green-500 to-emerald-500",
-                  bgColor: "hover:shadow-green-500/20",
-                  technologies: ["MySQL", "MongoDB", "PostgreSQL", "Redis"]
-                },
-                {
-                  icon: FiLayers,
-                  title: "Frontend Innovation",
-                  description: "Creating dynamic, responsive interfaces with modern frameworks and cutting-edge design principles.",
-                  color: "from-purple-500 to-pink-500",
-                  bgColor: "hover:shadow-purple-500/20",
-                  technologies: ["React", "TypeScript", "Tailwind", "Next.js"]
+                  technologies: ["Java", "Node.js", "React", "Spring Boot"]
                 },
                 {
                   icon: FiCloud,
-                  title: "DevOps & Cloud",
-                  description: "Streamlining deployments and infrastructure with modern CI/CD practices and cloud technologies.",
-                  color: "from-orange-500 to-red-500",
-                  bgColor: "hover:shadow-orange-500/20",
-                  technologies: ["AWS", "Docker", "GitHub Actions", "Kubernetes"]
+                  title: "Cloud Architect",
+                  description: "☁️ Deploying scalable solutions on AWS with Docker containers and automated pipelines.",
+                  color: "from-purple-500 to-pink-500",
+                  bgColor: "hover:shadow-purple-500/20",
+                  technologies: ["AWS", "Docker", "Kubernetes", "CI/CD"]
                 },
                 {
-                  icon: FiMonitor,
-                  title: "UI/UX Design",
-                  description: "Designing intuitive user experiences that balance aesthetics with functionality and accessibility.",
+                  icon: FiLayers,
+                  title: "UI/UX Sorcerer",
+                  description: "✨ Crafting pixel-perfect interfaces that users fall in love with using modern design tools.",
                   color: "from-pink-500 to-rose-500",
                   bgColor: "hover:shadow-pink-500/20",
-                  technologies: ["Figma", "Adobe XD", "Prototyping", "User Research"]
+                  technologies: ["React", "Figma", "Tailwind", "TypeScript"]
                 },
                 {
-                  icon: FiShield,
-                  title: "Security & Testing",
-                  description: "Implementing comprehensive security measures and testing strategies for reliable applications.",
-                  color: "from-indigo-500 to-purple-500",
-                  bgColor: "hover:shadow-indigo-500/20",
-                  technologies: ["OWASP", "Jest", "Cypress", "JWT"]
+                  icon: FiDatabase,
+                  title: "Data Maestro",
+                  description: "📊 Designing efficient databases and optimizing queries for lightning-fast applications.",
+                  color: "from-green-500 to-emerald-500",
+                  bgColor: "hover:shadow-green-500/20",
+                  technologies: ["MySQL", "MongoDB", "PostgreSQL", "Redis"]
                 }
               ].map((skill, index) => (
                 <div
@@ -252,42 +235,42 @@ export default function About() {
               ))}
             </div>
 
-            {/* Stats Section */}
-            <div className="grid grid-cols-3 gap-4 pt-8">
-              {[
-                { number: "50+", label: "Projects", icon: FiCode },
-                { number: "3+", label: "Years Exp", icon: FiGitBranch },
-                { number: "15+", label: "Technologies", icon: FiZap }
-              ].map((stat, index) => (
-                <div
-                  key={stat.label}
-                  className="text-center p-4 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
-                  style={{ animationDelay: `${index * 200}ms` }}
-                >
-                  <stat.icon className="text-2xl text-purple-600 mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-gray-900 dark:text-white">{stat.number}</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
-                </div>
-              ))}
-            </div>
+            {/* Fun Stats Section */}
+             <div className="grid grid-cols-3 gap-4 pt-8">
+               {[
+                 { number: "50+", label: "Code Adventures", icon: FiCode },
+                 { number: "3+", label: "Years Crafting", icon: FiGitBranch },
+                 { number: "15+", label: "Tech Weapons", icon: FiZap }
+               ].map((stat, index) => (
+                 <div
+                   key={stat.label}
+                   className="text-center p-6 bg-gradient-to-br from-white/70 via-purple-50/30 to-pink-50/30 dark:from-zinc-900/70 dark:via-purple-900/20 dark:to-pink-900/20 backdrop-blur-sm rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 border border-purple-200/20 dark:border-purple-800/20"
+                   style={{ animationDelay: `${index * 200}ms` }}
+                 >
+                   <stat.icon className="text-3xl text-purple-600 mx-auto mb-3 animate-pulse" />
+                   <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">{stat.number}</div>
+                   <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">{stat.label}</div>
+                 </div>
+               ))}
+             </div>
 
-            {/* Location & Status Badges */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
-              {[
-                { text: "🌍 Sri Lanka", bg: "bg-blue-100 dark:bg-blue-900/30", textColor: "text-blue-700 dark:text-blue-300" },
-                { text: "💼 Open to Work", bg: "bg-green-100 dark:bg-green-900/30", textColor: "text-green-700 dark:text-green-300" },
-                { text: "🚀 Always Learning", bg: "bg-purple-100 dark:bg-purple-900/30", textColor: "text-purple-700 dark:text-purple-300" },
-                { text: "💬 English & Sinhala", bg: "bg-orange-100 dark:bg-orange-900/30", textColor: "text-orange-700 dark:text-orange-300" }
-              ].map((badge, index) => (
-                <span
-                  key={badge.text}
-                  className={`px-4 py-2 ${badge.bg} ${badge.textColor} rounded-full font-medium shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105`}
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  {badge.text}
-                </span>
-              ))}
-            </div>
+            {/* Fun Status Badges */}
+             <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
+               {[
+                 { text: "� Sri Lankan Dev", bg: "bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-900/30 dark:to-cyan-900/30", textColor: "text-blue-700 dark:text-blue-300" },
+                 { text: "� Hiring Me? Let's Talk!", bg: "bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/30", textColor: "text-green-700 dark:text-green-300" },
+                 { text: "� Forever Student", bg: "bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30", textColor: "text-purple-700 dark:text-purple-300" },
+                 { text: "�️ Code in Any Language!", bg: "bg-gradient-to-r from-orange-100 to-red-100 dark:from-orange-900/30 dark:to-red-900/30", textColor: "text-orange-700 dark:text-orange-300" }
+               ].map((badge, index) => (
+                 <span
+                   key={badge.text}
+                   className={`px-5 py-3 ${badge.bg} ${badge.textColor} rounded-full font-semibold shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 border border-opacity-20 hover:border-opacity-40`}
+                   style={{ animationDelay: `${index * 100}ms` }}
+                 >
+                   {badge.text}
+                 </span>
+               ))}
+             </div>
           </div>
         </div>
       </div>
@@ -321,3 +304,4 @@ export default function About() {
     </section>
   );
 }
+
