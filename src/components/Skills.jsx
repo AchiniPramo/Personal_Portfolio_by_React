@@ -117,102 +117,256 @@ const categories = [
   "Design"
 ];
 
+const SkillIcon = ({ name }) => {
+  const icons = {
+    React: (
+      <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current">
+        <circle cx="12" cy="12" r="2.5" />
+        <path d="M12 2C6.5 8 2 10 2 12s4 4 10 10c6-6 10-8 10-10s-4-4-10-10z" fillOpacity="0.3" />
+        <ellipse cx="12" cy="12" rx="8" ry="3" fillOpacity="0.3" />
+        <ellipse cx="12" cy="12" rx="8" ry="3" transform="rotate(60 12 12)" fillOpacity="0.3" />
+        <ellipse cx="12" cy="12" rx="8" ry="3" transform="rotate(120 12 12)" fillOpacity="0.3" />
+      </svg>
+    ),
+    TypeScript: (
+      <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current">
+        <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.413l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.412l-.725 8.219 6.937 1.855-.074-8.572 2.426-.414v-2.62h-2.639l.082-2.576z"/>
+      </svg>
+    ),
+    "Next.js": (
+      <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current">
+        <path d="M12 2l8 6v8l-8 6-8-6v-8l8-6z" />
+        <path d="M12 8l-4 3v4l4 3 4-3v-4l-4-3z" fillOpacity="0.4" />
+      </svg>
+    ),
+    "Tailwind CSS": (
+      <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current">
+        <path d="M6 12c0-2.5 1.5-5 4-6 1-0.3 1.5 0.2 1.5 1s-0.3 1.2-1 1.5c-1.5 0.5-2.5 1.8-2.5 3.5 0 1.7 1 3 2.5 3.5 0.7 0.3 1 0.8 1 1.5s-0.5 1.3-1.5 1c-2.5-1-4-3.5-4-6z" />
+        <path d="M18 6c0-0.8 0.7-1.5 1.5-1.5S21 5.2 21 6v12c0 0.8-0.7 1.5-1.5 1.5s-1.5-0.7-1.5-1.5V6z" />
+        <path d="M12 4c0.8 0 1.5 0.7 1.5 1.5S12.8 7 12 7s-1.5-0.7-1.5-1.5S11.2 4 12 4z" />
+      </svg>
+    ),
+    "Node.js": (
+      <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current">
+        <path d="M12 2L2 7v10l10 5 10-5V7L12 2m0 2l8 4v8l-8 4-8-4v-8l8-4z" />
+        <circle cx="12" cy="12" r="3" fillOpacity="0.5" />
+      </svg>
+    ),
+    "Express.js": (
+      <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current">
+        <rect x="3" y="5" width="18" height="14" rx="2" fillOpacity="0.3" />
+        <path d="M7 12h10M12 8v8" strokeWidth="1.5" stroke="currentColor" fill="none" />
+      </svg>
+    ),
+    Java: (
+      <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current">
+        <path d="M9 3c-2 0-2 2-2 4s2 2 2 4-2 2-2 4 2 4 4 4h6c2 0 4-2 4-4s-2-2-2-4 2-2 2-4-2-4-4-4h-8z" />
+        <circle cx="12" cy="12" r="1.5" fillOpacity="0.4" />
+      </svg>
+    ),
+    "Spring Boot": (
+      <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+      </svg>
+    ),
+    MySQL: (
+      <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3-8c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3z" />
+      </svg>
+    ),
+    MongoDB: (
+      <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current">
+        <ellipse cx="12" cy="8" rx="5" ry="3" />
+        <path d="M7 8v6c0 1.66 2.24 3 5 3s5-1.34 5-3v-6" fillOpacity="0.5" />
+        <ellipse cx="12" cy="17" rx="5" ry="3" fillOpacity="0.3" />
+      </svg>
+    ),
+    PostgreSQL: (
+      <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3-8c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3z" />
+      </svg>
+    ),
+    AWS: (
+      <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current">
+        <path d="M6 9l6-5 6 5v6l-6 5-6-5v-6zm6-2l-4 3v4l4 3 4-3v-4l-4-3z" />
+        <circle cx="12" cy="12" r="1.5" fillOpacity="0.4" />
+      </svg>
+    ),
+    Docker: (
+      <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current">
+        <rect x="3" y="8" width="3" height="3" />
+        <rect x="8" y="8" width="3" height="3" />
+        <rect x="13" y="8" width="3" height="3" />
+        <rect x="18" y="8" width="3" height="3" />
+        <rect x="8" y="12" width="3" height="3" />
+        <rect x="13" y="12" width="3" height="3" />
+        <rect x="18" y="12" width="3" height="3" />
+        <rect x="13" y="16" width="3" height="3" />
+      </svg>
+    ),
+    Git: (
+      <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+        <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z" fillOpacity="0.4" />
+      </svg>
+    ),
+    Figma: (
+      <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current">
+        <circle cx="8" cy="8" r="2.5" />
+        <circle cx="16" cy="8" r="2.5" fillOpacity="0.6" />
+        <circle cx="8" cy="16" r="2.5" fillOpacity="0.6" />
+        <circle cx="16" cy="16" r="2.5" fillOpacity="0.4" />
+      </svg>
+    ),
+  };
+
+  return icons[name] || <div className="w-8 h-8" />;
+};
+
 function SkillCard({ icon, name, color, category }) {
+  const [isHovered, setIsHovered] = React.useState(false);
+  const [rotation, setRotation] = React.useState(0);
+
+  React.useEffect(() => {
+    if (isHovered) {
+      const interval = setInterval(() => {
+        setRotation(prev => (prev + 2) % 360);
+      }, 30);
+      return () => clearInterval(interval);
+    }
+  }, [isHovered]);
+
   const getCategoryColor = () => {
     switch (category) {
       case "Frontend":
-        return "#a855f7";
+        return { bg: "from-purple-500 to-pink-500", glow: "#a855f7", light: "rgba(168, 85, 247, 0.1)" };
       case "Backend":
-        return "#3b82f6";
+        return { bg: "from-blue-500 to-cyan-500", glow: "#3b82f6", light: "rgba(59, 130, 246, 0.1)" };
       case "Database":
-        return "#10b981";
+        return { bg: "from-green-500 to-emerald-500", glow: "#10b981", light: "rgba(16, 185, 129, 0.1)" };
       case "Cloud":
-        return "#f97316";
+        return { bg: "from-orange-500 to-red-500", glow: "#f97316", light: "rgba(249, 115, 22, 0.1)" };
       case "DevOps":
-        return "#06b6d4";
+        return { bg: "from-cyan-500 to-blue-500", glow: "#06b6d4", light: "rgba(6, 182, 212, 0.1)" };
       case "Tools":
-        return "#6b7280";
+        return { bg: "from-gray-500 to-slate-500", glow: "#6b7280", light: "rgba(107, 114, 128, 0.1)" };
       default:
-        return color || "#8b5cf6";
+        return { bg: "from-indigo-500 to-purple-500", glow: "#8b5cf6", light: "rgba(139, 92, 246, 0.1)" };
     }
   };
 
-  const gradientColor = color
-    ? `from-[${color}] to-[${color}CC]`
-    : category === "Frontend"
-    ? "from-purple-500 to-pink-500"
-    : category === "Backend"
-    ? "from-blue-500 to-cyan-500"
-    : category === "Database"
-    ? "from-green-500 to-emerald-500"
-    : category === "Cloud"
-    ? "from-orange-500 to-red-500"
-    : category === "DevOps"
-    ? "from-cyan-500 to-blue-500"
-    : category === "Tools"
-    ? "from-gray-500 to-slate-500"
-    : "from-indigo-500 to-purple-500";
+  const colors = getCategoryColor();
 
   return (
-    <div className="flex-shrink-0 w-20 h-20 mx-4 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 dark:border-zinc-700/50 flex flex-col items-center justify-center group hover:scale-110 transition-all duration-300 cursor-pointer">
-      {/* Icon */}
+    <div
+      className="relative flex-shrink-0 w-48 h-32"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Rotating border */}
       <div
-        className={`text-2xl mb-1 transition-transform duration-300 group-hover:scale-125`}
-        style={{ color: getCategoryColor() }}
-      >
-        {icon}
-      </div>
-
-      {/* Name */}
-      <div className="text-xs font-medium text-gray-700 dark:text-gray-300 text-center px-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300">
-        {name}
-      </div>
-
-      {/* Hover glow */}
-      <div
-        className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        className="absolute inset-0 rounded-xl border border-dashed opacity-20"
         style={{
-          background: `linear-gradient(135deg, ${getCategoryColor()}20, transparent)`,
-          boxShadow: `0 0 20px ${getCategoryColor()}40`
+          borderColor: colors.glow,
+          transform: `rotate(${rotation}deg)`,
+          transition: 'transform 0.05s linear'
         }}
       />
+
+      {/* Glow background */}
+      <div
+        className="absolute inset-0 rounded-xl opacity-0 transition-all duration-500"
+        style={{
+          background: colors.light,
+          opacity: isHovered ? 1 : 0,
+          filter: `blur(20px)`
+        }}
+      />
+
+      {/* Main card */}
+      <div
+        className="relative w-full h-full rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 transition-all duration-500"
+        style={{
+          background: `linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%)`,
+          boxShadow: isHovered
+            ? `inset 0 1px 2px rgba(255,255,255,0.1), 0 0 30px ${colors.glow}40, 0 0 60px ${colors.glow}20`
+            : `inset 0 1px 2px rgba(255,255,255,0.05), 0 0 20px ${colors.glow}20`,
+          transform: isHovered ? 'translateY(-8px)' : 'translateY(0)'
+        }}
+      >
+        {/* Content */}
+        <div className="relative h-full flex flex-col items-center justify-center gap-2.5 px-4">
+          {/* Icon */}
+          <div
+            className="transition-all duration-500"
+            style={{
+              color: colors.glow,
+              transform: isHovered ? 'scale(1.15)' : 'scale(1)',
+              filter: `drop-shadow(0 0 ${isHovered ? 12 : 4}px ${colors.glow}80)`
+            }}
+          >
+            <SkillIcon name={name} />
+          </div>
+
+          {/* Name */}
+          <span className="text-sm font-bold text-white text-center leading-tight">
+            {name}
+          </span>
+
+          {/* Animated line */}
+          <div
+            className="h-0.5 rounded-full transition-all duration-500"
+            style={{
+              background: `linear-gradient(90deg, transparent, ${colors.glow}, transparent)`,
+              width: isHovered ? '100%' : '30%'
+            }}
+          />
+
+          {/* Category */}
+          <div
+            className="text-[10px] font-semibold uppercase tracking-widest opacity-70 transition-opacity duration-500"
+            style={{ color: colors.glow, opacity: isHovered ? 1 : 0.7 }}
+          >
+            {category}
+          </div>
+        </div>
+
+        {/* Top gradient shine */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+      </div>
     </div>
   );
 }
 
 export default function Skills() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [animationStarted, setAnimationStarted] = useState(false);
+  const skills = [
+    { icon: "React", name: "React", category: "Frontend" },
+    { icon: "Tailwind", name: "Tailwind CSS", category: "Frontend" },
+    { icon: "Node.js", name: "Node.js", category: "Backend" },
+    { icon: "Python", name: "Python", category: "Backend" },
+    { icon: "PostgreSQL", name: "PostgreSQL", category: "Database" },
+    { icon: "Firebase", name: "Firebase", category: "Database" },
+    { icon: "AWS", name: "AWS", category: "Cloud" },
+    { icon: "Docker", name: "Docker", category: "DevOps" },
+    { icon: "Git", name: "Git", category: "Tools" },
+    { icon: "Webpack", name: "Webpack", category: "Tools" },
+  ];
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
-  useEffect(() => {
-    // Start animation when component mounts
-    setAnimationStarted(true);
-  }, []);
+  const skills2 = [
+    { icon: "Vue.js", name: "Vue.js", category: "Frontend" },
+    { icon: "Next.js", name: "Next.js", category: "Frontend" },
+    { icon: "Express", name: "Express.js", category: "Backend" },
+    { icon: "Java", name: "Java", category: "Backend" },
+    { icon: "MongoDB", name: "MongoDB", category: "Database" },
+    { icon: "GraphQL", name: "GraphQL", category: "Database" },
+    { icon: "Kubernetes", name: "Kubernetes", category: "Cloud" },
+    { icon: "Jenkins", name: "Jenkins", category: "DevOps" },
+    { icon: "VS Code", name: "VS Code", category: "Tools" },
+    { icon: "Figma", name: "Figma", category: "Tools" },
+  ];
 
   return (
-    <section
-      id="skills"
-      className="relative py-24 bg-gradient-to-br from-purple-50 via-blue-50 to-cyan-50 dark:from-zinc-950 dark:via-blue-950 dark:to-purple-950 overflow-hidden"
-    >
-      {/* Interactive Background */}
-      <div
-        className="absolute pointer-events-none w-96 h-96 bg-gradient-to-r from-purple-400/10 to-blue-400/10 rounded-full blur-3xl transition-all duration-1000"
-        style={{
-          left: mousePosition.x - 192,
-          top: mousePosition.y - 192
-        }}
-      />
-
-      {/* Floating geometric shapes */}
+    <div className="w-screen min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-black overflow-x-hidden py-20 px-0">
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(8)].map((_, i) => (
           <div
@@ -238,251 +392,58 @@ export default function Skills() {
         ))}
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm rounded-full shadow-lg mb-6">
-            <FiCode className="text-purple-600" />
-            <span className="text-sm font-medium text-purple-700 dark:text-purple-300">
-              Fullstack Mastery
-            </span>
-          </div>
-
-          <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 mb-6">
-            Technical Expertise
-          </h2>
-
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Mastering the complete development stack with cutting-edge
-            technologies. From pixel-perfect interfaces to scalable backend
-            architectures, I bring comprehensive skills to every project.
-          </p>
+      <div className="w-full mb-12 px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-20">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black mb-4 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+            Advanced Skills
+          </h1>
+          <p className="text-gray-400 text-lg sm:text-xl">Professional expertise across modern technologies</p>
         </div>
+      </div>
 
-        {/* Scrolling Skills Animation */}
+      {/* Scrolling Skills Animation */}
         <div className="w-full overflow-hidden mb-16">
-          {/* First Row - Right to Left */}
-          <div className="relative mb-8">
+          {/* First Row - Moving Right to Left */}
+          <div className="w-screen overflow-hidden mb-12 group">
             <div
-              className={`flex animate-scroll-right-to-left ${
-                animationStarted ? "running" : "paused"
-              }`}
+              className="flex gap-4 sm:gap-6 px-4"
               style={{
-                width: "calc(200px * 45)" // 15 skills * 3 duplicates * 200px (80px width + 8px margin * 2)
+                animation: 'scroll-left 70s linear infinite',
+                willChange: 'transform'
               }}
             >
               {duplicatedSkills.map((skill, i) => (
                 <SkillCard key={`${skill.name}-${i}`} {...skill} />
               ))}
             </div>
+
+            {/* Gradient fade edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-slate-950 via-slate-950/50 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-slate-950 via-slate-950/50 to-transparent z-10 pointer-events-none" />
           </div>
 
-          {/* Second Row - Left to Right */}
-          <div className="relative">
+          {/* Second Row - Moving Left to Right */}
+          <div className="w-screen overflow-hidden group relative">
             <div
-              className={`flex animate-scroll-left-to-right ${
-                animationStarted ? "running" : "paused"
-              }`}
+              className="flex gap-4 sm:gap-6 px-4"
               style={{
-                width: "calc(200px * 45)" // 15 skills * 3 duplicates * 200px (80px width + 8px margin * 2)
+                animation: 'scroll-right 70s linear infinite',
+                willChange: 'transform'
               }}
             >
               {duplicatedSkills.map((skill, i) => (
                 <SkillCard key={`${skill.name}-row2-${i}`} {...skill} />
               ))}
             </div>
+
+            {/* Gradient fade edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-slate-950 via-slate-950/50 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-slate-950 via-slate-950/50 to-transparent z-10 pointer-events-none" />
           </div>
         </div>
 
-        {/* Enhanced Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-          {[
-            {
-              icon: FiCode,
-              value: "15+",
-              label: "Technologies",
-              color: "from-blue-500 to-cyan-500"
-            },
-            {
-              icon: FiLayers,
-              value: "50+",
-              label: "Projects",
-              color: "from-purple-500 to-pink-500"
-            },
-            {
-              icon: FiGitBranch,
-              value: "1000+",
-              label: "Commits",
-              color: "from-green-500 to-emerald-500"
-            },
-            {
-              icon: FiZap,
-              value: "3+",
-              label: "Years Exp",
-              color: "from-orange-500 to-red-500"
-            }
-          ].map((stat, index) => (
-            <div
-              key={stat.label}
-              className="group p-6 bg-white/70 dark:bg-zinc-900/70 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 text-center border border-gray-200/50 dark:border-zinc-700/50"
-              style={{ animationDelay: `${index * 150}ms` }}
-            >
-              <div
-                className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${stat.color} mb-4 shadow-lg`}
-              >
-                <stat.icon className="text-white text-2xl" />
-              </div>
-              <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-blue-600 transition-all">
-                {stat.value}
-              </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
 
-        {/* Philosophy Section */}
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-3xl blur-3xl" />
-          <div className="relative bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-200/50 dark:border-zinc-700/50">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h3 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600 mb-6">
-                  Development Philosophy
-                </h3>
-                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                  I believe in creating technology that serves humanity. Every
-                  line of code should solve real problems, every interface
-                  should delight users, and every system should scale
-                  gracefully.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  {[
-                    "Performance First",
-                    "User-Centric Design",
-                    "Scalable Architecture",
-                    "Clean Code",
-                    "Continuous Learning"
-                  ].map((principle, index) => (
-                    <span
-                      key={principle}
-                      className="px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm font-medium"
-                      style={{ animationDelay: `${index * 100}ms` }}
-                    >
-                      {principle}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="relative">
-                {/* Animated tech stack visualization */}
-                <div className="grid grid-cols-3 gap-4">
-                  {[
-                    {
-                      icon: FiMonitor,
-                      label: "Frontend",
-                      color: "text-purple-500"
-                    },
-                    {
-                      icon: FiServer,
-                      label: "Backend",
-                      color: "text-blue-500"
-                    },
-                    {
-                      icon: FiDatabase,
-                      label: "Database",
-                      color: "text-green-500"
-                    },
-                    { icon: FiCloud, label: "Cloud", color: "text-cyan-500" },
-                    {
-                      icon: FiShield,
-                      label: "Security",
-                      color: "text-red-500"
-                    },
-                    {
-                      icon: FiSmartphone,
-                      label: "Mobile",
-                      color: "text-pink-500"
-                    }
-                  ].map((item, index) => (
-                    <div
-                      key={item.label}
-                      className={`flex flex-col items-center p-4 bg-white dark:bg-zinc-800 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110 group`}
-                      style={{ animationDelay: `${index * 150}ms` }}
-                    >
-                      <item.icon
-                        className={`text-2xl ${item.color} mb-2 group-hover:scale-125 transition-transform`}
-                      />
-                      <span className="text-xs font-medium text-gray-600 dark:text-gray-400 text-center">
-                        {item.label}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Connecting lines animation */}
-                <svg
-                  className="absolute inset-0 w-full h-full pointer-events-none"
-                  viewBox="0 0 100 100"
-                >
-                  <defs>
-                    <linearGradient
-                      id="lineGrad"
-                      x1="0%"
-                      y1="0%"
-                      x2="100%"
-                      y2="0%"
-                    >
-                      <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.3" />
-                      <stop
-                        offset="100%"
-                        stopColor="#3B82F6"
-                        stopOpacity="0.3"
-                      />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    d="M20 20 L50 20 L50 50 L80 50"
-                    stroke="url(#lineGrad)"
-                    strokeWidth="2"
-                    fill="none"
-                    className="animate-draw-path"
-                  />
-                  <path
-                    d="M20 80 L50 80 L50 50"
-                    stroke="url(#lineGrad)"
-                    strokeWidth="2"
-                    fill="none"
-                    className="animate-draw-path animation-delay-500"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="inline-flex items-center gap-4">
-            <span className="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-sm font-medium animate-pulse">
-              🚀 Open to Opportunities
-            </span>
-            <a
-              href="https://github.com/AchiniPramo"
-              target="_blank"
-              rel="noreferrer"
-              className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-full font-medium shadow-lg shadow-purple-500/25 transition-all hover:scale-105"
-            >
-              View My Work
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Custom Animations */}
-      <style jsx>{`
+<style jsx>{`
         @keyframes float-random {
           0%,
           100% {
@@ -513,7 +474,7 @@ export default function Skills() {
             stroke-dasharray: 100 0;
           }
         }
-        @keyframes scroll-right-to-left {
+        @keyframes scroll-left {
           0% {
             transform: translateX(0);
           }
@@ -521,7 +482,8 @@ export default function Skills() {
             transform: translateX(-50%);
           }
         }
-        @keyframes scroll-left-to-right {
+
+        @keyframes scroll-right {
           0% {
             transform: translateX(-50%);
           }
@@ -529,6 +491,11 @@ export default function Skills() {
             transform: translateX(0);
           }
         }
+
+        .group:hover > div {
+          animation-play-state: paused;
+        }
+
         .animate-float-random {
           animation: float-random 6s ease-in-out infinite;
         }
@@ -542,21 +509,7 @@ export default function Skills() {
         .animation-delay-500 {
           animation-delay: 0.5s;
         }
-        .animate-scroll-right-to-left {
-          animation: scroll-right-to-left 60s linear infinite;
-          animation-play-state: paused;
-        }
-        .animate-scroll-left-to-right {
-          animation: scroll-left-to-right 60s linear infinite;
-          animation-play-state: paused;
-        }
-        .running {
-          animation-play-state: running;
-        }
-        .paused {
-          animation-play-state: paused;
-        }
       `}</style>
-    </section>
+    </div>
   );
 }

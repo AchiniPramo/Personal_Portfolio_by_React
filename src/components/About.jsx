@@ -43,27 +43,37 @@ export default function About() {
         }}
       />
 
-      {/* Floating geometric shapes */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[...Array(6)].map((_, i) => (
+      {/* Enhanced Interactive Particles */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {[...Array(12)].map((_, i) => (
           <div
             key={i}
-            className="absolute opacity-5 dark:opacity-10 animate-float-random"
+            className="absolute opacity-10 dark:opacity-20 animate-float-random"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`
+              animationDelay: `${Math.random() * 8}s`
             }}
           >
-            {i % 3 === 0 && (
-              <div className="w-16 h-16 border-2 border-purple-500 rotate-45" />
+            {i % 4 === 0 && (
+              <div className="w-12 h-12 border border-purple-400 rotate-45 animate-spin-slow" />
             )}
-            {i % 3 === 1 && (
-              <div className="w-12 h-12 bg-blue-500 rounded-full" />
+            {i % 4 === 1 && (
+              <div className="w-8 h-8 bg-blue-400 rounded-full animate-pulse" />
             )}
-            {i % 3 === 2 && <div className="w-20 h-8 bg-cyan-500 rounded-lg" />}
+            {i % 4 === 2 && (
+              <div className="w-6 h-6 bg-cyan-400 rounded-lg animate-bounce" />
+            )}
+            {i % 4 === 3 && (
+              <div className="w-10 h-10 border-2 border-pink-400 rounded-full animate-ping" />
+            )}
           </div>
         ))}
+
+        {/* Typing Cursor Effect */}
+        <div className="absolute top-32 left-1/2 transform -translate-x-1/2 opacity-30">
+          <div className="text-purple-400 text-6xl font-mono animate-blink">|</div>
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -78,70 +88,55 @@ export default function About() {
             </span>
           </div>
 
-          {/* Animated Name Reveal */}
+          {/* Dynamic Typing Animation */}
           <div className="relative mb-8">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 blur-2xl opacity-20 animate-pulse" />
-            <h1 className="relative text-5xl md:text-7xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 animate-fade-in-up mb-4 tracking-tight">
-              ACHINI
+            <h1 className="relative text-5xl md:text-7xl font-black animate-fade-in-up mb-4 tracking-tight">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600">
+                Full Stack Developer
+              </span>
+              <span className="text-purple-400 animate-blink">|</span>
             </h1>
-            <h2 className="relative text-3xl md:text-5xl font-bold text-gray-800 dark:text-gray-200 animate-fade-in-up animation-delay-300 tracking-wide">
-              PRAMODHYA
-            </h2>
+            <div className="relative text-xl md:text-2xl text-gray-600 dark:text-gray-400 animate-fade-in-up animation-delay-300">
+              Crafting Digital Experiences with Passion & Innovation
+            </div>
           </div>
 
-          {/* Creative Bio Cards */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
+          {/* Compacted Creative Bio */}
+          <div className="max-w-4xl mx-auto mb-12">
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-500" />
               <div className="relative bg-white/90 dark:bg-zinc-900/90 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-gray-200/50 dark:border-zinc-700/50 hover:scale-105 transition-all duration-500">
-                <div className="flex items-center gap-4 mb-4">
+                <div className="flex items-center gap-4 mb-6">
                   <div className="p-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl">
                     <FiZap className="text-white text-xl" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">The Innovator</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Innovator & Explorer</h3>
                 </div>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  A passionate fullstack developer who transforms complex ideas into elegant digital solutions.
-                  I craft scalable web applications that not only function flawlessly but also deliver
-                  unforgettable user experiences through cutting-edge technologies.
-                </p>
-              </div>
-            </div>
-
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-500" />
-              <div className="relative bg-white/90 dark:bg-zinc-900/90 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-gray-200/50 dark:border-zinc-700/50 hover:scale-105 transition-all duration-500">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="p-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl">
-                    <FiTerminal className="text-white text-xl" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">The Explorer</h3>
-                </div>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  From React ecosystems to Node.js architectures, I continuously push boundaries.
-                  Currently diving deep into AI integration, advanced web technologies, and cloud-native
-                  solutions to stay ahead of the innovation curve.
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
+                  Passionate fullstack developer transforming ideas into elegant digital solutions.
+                  Crafting scalable web applications with cutting-edge technologies, continuously pushing boundaries
+                  through AI integration, advanced architectures, and innovative problem-solving.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Core Philosophy */}
-          <div className="max-w-5xl mx-auto">
+          {/* Condensed Philosophy */}
+          <div className="max-w-3xl mx-auto mb-12">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-cyan-500/20 rounded-3xl blur-2xl" />
-              <div className="relative bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border border-gray-200/50 dark:border-zinc-700/50">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-cyan-500/20 rounded-2xl blur-xl" />
+              <div className="relative bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl rounded-2xl p-8 shadow-xl border border-gray-200/50 dark:border-zinc-700/50">
                 <div className="text-center">
-                  <h3 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600 mb-6">
-                    💡 My Philosophy
+                  <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600 mb-4">
+                    💡 Philosophy
                   </h3>
-                  <div className="space-y-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                    <p>
-                      I believe in the transformative power of technology to solve real-world problems and enhance human experiences.
-                      Every line of code I write is an opportunity to create something meaningful, something that makes a difference.
+                  <div className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                    <p className="mb-3">
+                      Technology transforms problems into solutions. Every line of code creates meaningful impact.
                     </p>
-                    <p className="font-semibold text-purple-600 dark:text-purple-400">
-                      "Code is poetry in motion. Design is emotion made tangible. Innovation is the bridge between imagination and reality."
+                    <p className="font-semibold text-purple-600 dark:text-purple-400 italic">
+                      "Code is poetry in motion. Innovation bridges imagination and reality."
                     </p>
                   </div>
                 </div>
@@ -161,37 +156,33 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 icon: FiCode,
-                title: "Frontend Mastery",
-                description: "React, Next.js, TypeScript, Tailwind CSS, Vue.js",
-                skills: ["Component Architecture", "Performance Optimization", "UI/UX Implementation"],
+                title: "Frontend",
+                description: "React, TypeScript, Next.js",
                 color: "from-blue-500 to-cyan-500",
                 glowColor: "from-blue-400/20 to-cyan-400/20"
               },
               {
                 icon: FiServer,
-                title: "Backend Engineering",
-                description: "Node.js, Express, Java, Spring Boot, Python",
-                skills: ["RESTful APIs", "Microservices", "Authentication"],
+                title: "Backend",
+                description: "Node.js, Python, Java",
                 color: "from-purple-500 to-pink-500",
                 glowColor: "from-purple-400/20 to-pink-400/20"
               },
               {
                 icon: FiDatabase,
-                title: "Database Architecture",
-                description: "MySQL, MongoDB, PostgreSQL, Redis",
-                skills: ["Schema Design", "Query Optimization", "Data Modeling"],
+                title: "Databases",
+                description: "MongoDB, PostgreSQL, Redis",
                 color: "from-green-500 to-emerald-500",
                 glowColor: "from-green-400/20 to-emerald-400/20"
               },
               {
                 icon: FiCloud,
                 title: "Cloud & DevOps",
-                description: "AWS, Docker, Kubernetes, CI/CD",
-                skills: ["Infrastructure as Code", "Auto-scaling", "Monitoring"],
+                description: "AWS, Docker, CI/CD",
                 color: "from-orange-500 to-red-500",
                 glowColor: "from-orange-400/20 to-red-400/20"
               }
@@ -201,43 +192,17 @@ export default function About() {
                 className="group relative"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                {/* Animated Background Glow */}
-                <div className={`absolute inset-0 bg-gradient-to-r ${expertise.glowColor} rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
-
-                <div className="relative p-8 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-lg rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-gray-200/50 dark:border-zinc-700/50 group-hover:border-purple-300/50 dark:group-hover:border-purple-600/50">
-                  <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${expertise.color} mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    <expertise.icon className="text-white text-2xl" />
+                <div className={`absolute inset-0 bg-gradient-to-r ${expertise.glowColor} rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
+                <div className="relative p-6 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-gray-200/50 dark:border-zinc-700/50 group-hover:border-purple-300/50 dark:group-hover:border-purple-600/50">
+                  <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${expertise.color} mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <expertise.icon className="text-white text-xl" />
                   </div>
-
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                     {expertise.title}
                   </h3>
-
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                     {expertise.description}
                   </p>
-
-                  <div className="space-y-2">
-                    {expertise.skills.map((skill, skillIndex) => (
-                      <div key={skillIndex} className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 bg-purple-500 rounded-full" />
-                        <span className="text-xs text-gray-500 dark:text-gray-500">{skill}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Progress Bar Animation */}
-                  <div className="mt-6">
-                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1 overflow-hidden">
-                      <div
-                        className={`h-full bg-gradient-to-r ${expertise.color} rounded-full transition-all duration-1000 ease-out`}
-                        style={{
-                          width: '0%',
-                          animation: `progress-fill 2s ease-out ${index * 0.3}s forwards`
-                        }}
-                      />
-                    </div>
-                  </div>
                 </div>
               </div>
             ))}
@@ -255,95 +220,24 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              {
-                icon: FiCode,
-                value: "50+",
-                label: "Projects Built",
-                description: "From concept to deployment",
-                color: "from-blue-500 to-cyan-500",
-                progress: 85
-              },
-              {
-                icon: FiLayers,
-                value: "3+",
-                label: "Years Experience",
-                description: "Continuous learning journey",
-                color: "from-purple-500 to-pink-500",
-                progress: 75
-              },
-              {
-                icon: FiZap,
-                value: "15+",
-                label: "Technologies",
-                description: "Tools in my arsenal",
-                color: "from-green-500 to-emerald-500",
-                progress: 90
-              },
-              {
-                icon: FiGitBranch,
-                value: "1000+",
-                label: "Git Commits",
-                description: "Lines of dedication",
-                color: "from-orange-500 to-red-500",
-                progress: 95
-              }
+              { icon: FiCode, value: "50+", label: "Projects", color: "from-blue-500 to-cyan-500" },
+              { icon: FiLayers, value: "3+", label: "Years", color: "from-purple-500 to-pink-500" },
+              { icon: FiZap, value: "15+", label: "Tech Stack", color: "from-green-500 to-emerald-500" },
+              { icon: FiGitBranch, value: "1000+", label: "Commits", color: "from-orange-500 to-red-500" }
             ].map((stat, index) => (
-              <div
-                key={stat.label}
-                className="group relative"
-                style={{ animationDelay: `${index * 200}ms` }}
-              >
-                {/* Animated Counter Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                <div className="relative p-8 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-lg rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 text-center border border-gray-200/50 dark:border-zinc-700/50 group-hover:border-purple-300/50 dark:group-hover:border-purple-600/50">
-                  <div className={`inline-flex p-5 rounded-3xl bg-gradient-to-r ${stat.color} mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 mx-auto`}>
-                    <stat.icon className="text-white text-3xl" />
+              <div key={stat.label} className="group relative text-center" style={{ animationDelay: `${index * 200}ms` }}>
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative p-6 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-gray-200/50 dark:border-zinc-700/50 group-hover:border-purple-300/50 dark:group-hover:border-purple-600/50">
+                  <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${stat.color} mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300 mx-auto`}>
+                    <stat.icon className="text-white text-2xl" />
                   </div>
-
-                  <div className="text-4xl font-black text-gray-900 dark:text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300">
+                  <div className="text-3xl font-black text-gray-900 dark:text-white mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300">
                     {stat.value}
                   </div>
-
-                  <div className="text-lg font-bold text-gray-700 dark:text-gray-300 mb-2">
+                  <div className="text-sm font-bold text-gray-700 dark:text-gray-300">
                     {stat.label}
-                  </div>
-
-                  <div className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-                    {stat.description}
-                  </div>
-
-                  {/* Progress Ring */}
-                  <div className="relative w-16 h-16 mx-auto">
-                    <svg className="w-16 h-16 transform -rotate-90" viewBox="0 0 36 36">
-                      <path
-                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        className="text-gray-200 dark:text-gray-700"
-                      />
-                      <path
-                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                        fill="none"
-                        stroke={`url(#gradient-${index})`}
-                        strokeWidth="2"
-                        strokeDasharray={`${stat.progress}, 100`}
-                        className="transition-all duration-1000 ease-out"
-                        style={{ strokeDashoffset: 0 }}
-                      />
-                      <defs>
-                        <linearGradient id={`gradient-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stopColor="rgb(139, 92, 246)" />
-                          <stop offset="100%" stopColor="rgb(59, 130, 246)" />
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-xs font-bold text-purple-600">{stat.progress}%</span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -362,63 +256,33 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {/* Mission */}
+          {/* Impact Statement */}
+          <div className="max-w-4xl mx-auto">
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-gray-200/50 dark:border-zinc-700/50 hover:scale-105 transition-all duration-500">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="p-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl">
-                    <FiZap className="text-white text-2xl" />
-                  </div>
-                  <h4 className="text-2xl font-bold text-gray-900 dark:text-white">Mission</h4>
-                </div>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  To architect digital solutions that transcend expectations. I craft experiences that don't just
-                  work—they inspire, they transform, they create lasting value in an ever-evolving technological landscape.
-                </p>
-              </div>
-            </div>
-
-            {/* Vision */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-gray-200/50 dark:border-zinc-700/50 hover:scale-105 transition-all duration-500">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="p-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl">
-                    <FiCode className="text-white text-2xl" />
-                  </div>
-                  <h4 className="text-2xl font-bold text-gray-900 dark:text-white">Vision</h4>
-                </div>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Pioneering the future of web development by seamlessly blending cutting-edge technology with
-                  human-centered design. I envision a world where digital experiences are as intuitive as they are powerful.
-                </p>
-              </div>
-            </div>
-
-            {/* Values */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-gray-200/50 dark:border-zinc-700/50 hover:scale-105 transition-all duration-500">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="p-4 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-2xl">
-                    <FiLayers className="text-white text-2xl" />
-                  </div>
-                  <h4 className="text-2xl font-bold text-gray-900 dark:text-white">Values</h4>
-                </div>
-                <div className="space-y-3">
-                  {[
-                    "Innovation over imitation",
-                    "Quality over quantity",
-                    "Collaboration over competition",
-                    "Learning over knowing"
-                  ].map((value, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-purple-500 rounded-full" />
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">{value}</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border border-gray-200/50 dark:border-zinc-700/50 hover:scale-105 transition-all duration-500">
+                <div className="text-center">
+                  <h3 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600 mb-6">
+                    Mission & Values
+                  </h3>
+                  <div className="space-y-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                    <p className="font-medium">
+                      Architecting digital solutions that transcend expectations—where innovation meets human-centered design.
+                    </p>
+                    <div className="grid md:grid-cols-2 gap-4 mt-6">
+                      {[
+                        "Innovation over imitation",
+                        "Quality over quantity",
+                        "Collaboration over competition",
+                        "Learning over knowing"
+                      ].map((value, index) => (
+                        <div key={index} className="flex items-center gap-3 justify-center">
+                          <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full" />
+                          <span className="text-gray-700 dark:text-gray-300 font-medium">{value}</span>
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -522,17 +386,36 @@ export default function About() {
       <style jsx>{`
         @keyframes float-random {
           0%, 100% {
-            transform: translateY(0px) rotate(0deg);
+            transform: translateY(0px) rotate(0deg) scale(1);
           }
-          33% {
-            transform: translateY(-10px) rotate(5deg);
+          25% {
+            transform: translateY(-15px) rotate(90deg) scale(1.1);
           }
-          66% {
-            transform: translateY(10px) rotate(-5deg);
+          50% {
+            transform: translateY(-5px) rotate(180deg) scale(0.9);
+          }
+          75% {
+            transform: translateY(-20px) rotate(270deg) scale(1.05);
           }
         }
         .animate-float-random {
-          animation: float-random 6s ease-in-out infinite;
+          animation: float-random 8s ease-in-out infinite;
+        }
+
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+          animation: spin-slow 8s linear infinite;
+        }
+
+        @keyframes blink {
+          0%, 50% { opacity: 1; }
+          51%, 100% { opacity: 0; }
+        }
+        .animate-blink {
+          animation: blink 1.5s infinite;
         }
 
         @keyframes fade-in-up {
@@ -547,15 +430,6 @@ export default function About() {
         }
         .animate-fade-in-up {
           animation: fade-in-up 1s ease-out forwards;
-        }
-
-        @keyframes progress-fill {
-          0% {
-            width: 0%;
-          }
-          100% {
-            width: var(--progress-width);
-          }
         }
 
         .animation-delay-300 {
