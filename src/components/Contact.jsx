@@ -66,19 +66,19 @@ export default function Contact() {
     {
       icon: FiMail,
       label: 'Email',
-      value: 'hello@example.com',
+      value: 'achinipramodhya4@gmail.com',
       href: 'mailto:hello@example.com'
     },
     {
       icon: FiPhone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
+      value: '+94 76 648 3520',
       href: 'tel:+15551234567'
     },
     {
       icon: FiMapPin,
       label: 'Location',
-      value: 'New York, NY',
+      value: 'Galle, Sri Lanka',
       href: '#'
     }
   ];
