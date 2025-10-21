@@ -1,9 +1,12 @@
 import React from "react";
 import useReveal from "../hooks/useReveal";
+import useTheme from "../hooks/useTheme";
 
 export default function ServiceCard({ Icon, title, desc, accent }) {
   const [ref, visible] = useReveal({ threshold: 0.12 });
   const [isHovered, setIsHovered] = React.useState(false);
+  const [theme] = useTheme();
+  const isDark = theme === 'dark';
 
   return (
     <div
@@ -29,31 +32,52 @@ export default function ServiceCard({ Icon, title, desc, accent }) {
       />
 
       {/* Floating Particles */}
-      <div className="absolute -top-2 -right-2 w-3 h-3 bg-gradient-to-r from-indigo-400 to-pink-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-bounce" />
-      <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-bounce delay-200" />
+      <div 
+        className="absolute -top-2 -right-2 w-3 h-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-bounce" 
+        style={{ background: 'var(--primary)' }}
+      />
+      <div 
+        className="absolute -bottom-1 -left-1 w-2 h-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-bounce delay-200" 
+        style={{ background: 'var(--secondary)' }}
+      />
 
       {/* Main Card */}
-      <div className="relative h-[220px] rounded-3xl border border-white/20 dark:border-zinc-800/50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl shadow-xl group-hover:shadow-2xl transition-all duration-500 transform-gpu group-hover:-translate-y-3 group-hover:rotate-y-2 group-hover:scale-105">
-
+      <div 
+        className="relative h-[220px] rounded-3xl border backdrop-blur-xl shadow-xl group-hover:shadow-2xl transition-all duration-500 transform-gpu group-hover:-translate-y-3 group-hover:rotate-y-2 group-hover:scale-105 card"
+        style={{
+          borderColor: isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'
+        }}
+      >
         {/* Animated Border */}
-        <div className="absolute inset-0 rounded-3xl p-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          <div className="w-full h-full rounded-3xl bg-white/95 dark:bg-zinc-900/95" />
+        <div 
+          className="absolute inset-0 rounded-3xl p-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          style={{ background: accent }}
+        >
+          <div 
+            className="w-full h-full rounded-3xl" 
+            style={{ background: 'var(--surface)' }}
+          />
         </div>
 
         <div className="relative p-8 h-full flex flex-col">
           {/* Icon Section */}
           <div className="flex items-center gap-4 mb-6">
-            <div className={`relative w-16 h-16 rounded-2xl flex items-center justify-center text-white text-2xl transition-all duration-500 transform-gpu group-hover:scale-110 group-hover:rotate-12`}
-                 style={{
-                   background: accent,
-                   boxShadow: isHovered ? `0 0 30px ${accent.replace('linear-gradient(90deg,', '').replace(')', '').split(',')[0].trim()}` : 'none'
-                 }}>
+            <div 
+              className="relative w-16 h-16 rounded-2xl flex items-center justify-center text-white text-2xl transition-all duration-500 transform-gpu group-hover:scale-110 group-hover:rotate-12"
+              style={{
+                background: accent,
+                boxShadow: isHovered ? `0 0 30px ${accent.replace('linear-gradient(90deg,', '').replace(')', '').split(',')[0].trim()}` : 'none'
+              }}
+            >
               {Icon && <Icon className="transition-transform duration-300 group-hover:scale-110" />}
               {/* Icon Glow Effect */}
               <div className="absolute inset-0 rounded-2xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
             <div className="flex-1">
-              <h4 className="font-bold text-xl text-gray-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:to-pink-600 transition-all duration-300">
+              <h4 
+                className="font-bold text-xl transition-all duration-300"
+                style={{ color: 'var(--text)' }}
+              >
                 {title}
               </h4>
             </div>
@@ -61,16 +85,23 @@ export default function ServiceCard({ Icon, title, desc, accent }) {
 
           {/* Description */}
           <div className="flex-1 flex flex-col justify-between">
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300 line-clamp-4">
+            <p 
+              className="leading-relaxed transition-colors duration-300 line-clamp-4"
+              style={{ color: 'var(--muted)' }}
+            >
               {desc}
             </p>
 
             {/* Animated Progress Bar */}
             <div className="mt-6">
-              <div className="w-full h-1 bg-gray-200 dark:bg-zinc-700 rounded-full overflow-hidden">
+              <div 
+                className="w-full h-1 rounded-full overflow-hidden"
+                style={{ background: isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)' }}
+              >
                 <div
-                  className="h-full bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full transition-all duration-1000 ease-out"
+                  className="h-full rounded-full transition-all duration-1000 ease-out"
                   style={{
+                    background: accent,
                     width: isHovered ? '100%' : '20%',
                     transform: isHovered ? 'scaleX(1)' : 'scaleX(0.8)',
                     transformOrigin: 'left'
@@ -82,13 +113,23 @@ export default function ServiceCard({ Icon, title, desc, accent }) {
         </div>
 
         {/* Hover Overlay Effect */}
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-indigo-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+        <div 
+          className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+          style={{
+            background: `linear-gradient(135deg, var(--primary)/5, var(--secondary)/5, var(--accent)/5)`
+          }}
+        />
       </div>
 
       {/* Subtle Inner Shadow */}
-      <div className="absolute inset-0 rounded-3xl pointer-events-none" style={{
-        boxShadow: "inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.05)"
-      }} />
+      <div 
+        className="absolute inset-0 rounded-3xl pointer-events-none" 
+        style={{
+          boxShadow: isDark 
+            ? "inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.05)"
+            : "inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.05)"
+        }} 
+      />
     </div>
   );
 }

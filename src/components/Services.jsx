@@ -16,7 +16,7 @@ const services = [
   {
     Icon: FiMonitor,
     title: "Web Development",
-    desc: "Creating responsive and scalable web applications using cutting-edge technologies and frameworks.",
+    desc: "Creating responsive and scalable web applications using cutting-edge technologies, frameworks.",
     accent: "linear-gradient(90deg,#6366f1,#ec4899)"
   },
   {
@@ -40,7 +40,7 @@ const services = [
   {
     Icon: FiCloud,
     title: "Cloud Computing",
-    desc: "Designing and implementing scalable cloud solutions for improved performance and cost-efficiency.",
+    desc: "Designing,implementing scalable cloud solutions for improved performance, cost-efficiency.",
     accent: "linear-gradient(90deg,#0ea5e9,#22d3ee)"
   },
   {
@@ -52,7 +52,7 @@ const services = [
   {
     Icon: FiGitBranch,
     title: "DevOps",
-    desc: "Streamlining development and operations processes for faster deployment and improved collaboration.",
+    desc: "Streamlining development operations for faster deployment and better collaboration.",
     accent: "linear-gradient(90deg,#f43f5e,#fb7185)"
   },
   {
@@ -64,7 +64,7 @@ const services = [
   {
     Icon: FiShoppingCart,
     title: "POS Development",
-    desc: "Developing advanced Point of Sale solutions for streamlined transactions and efficient business operations.",
+    desc: "Developing POS solutions for seamless transactions and efficient operations.",
     accent: "linear-gradient(90deg,#059669,#34d399)"
   }
 ];
