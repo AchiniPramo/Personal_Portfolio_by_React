@@ -1,44 +1,39 @@
-# 🌐 Personal Portfolio by React
+# 🌟 Personal Portfolio by React  
+[![GitHub forks](https://img.shields.io/github/forks/AchiniPramo/Personal_Portfolio_by_React?style=social)](https://github.com/AchiniPramo/Personal_Portfolio_by_React/network) [![GitHub stars](https://img.shields.io/github/stars/AchiniPramo/Personal_Portfolio_by_React?style=social)](https://github.com/AchiniPramo/Personal_Portfolio_by_React/stargazers) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)  
 
-A modern, responsive, and visually stunning **personal portfolio website** built using **React.js**.  
-This portfolio showcases my skills, projects, and professional journey as a **Full-Stack Developer**, designed with a strong focus on **UI/UX, interactivity, and performance**.
-
----
-
-
-## 🖼️ Overview  
-
-This portfolio represents **who I am as a developer** — a creative, passionate, and detail-oriented professional.  
-It highlights my **technical expertise, professional experience, and personal projects** in an elegant and user-friendly way.
+A modern, responsive, visually-stunning **personal portfolio website**, built using **React.js**, to showcase skills, projects and professional journey with emphasis on UI/UX, interactivity and performance.
 
 ---
 
-## ✨ Features  
-
-✅ Fully Responsive Design (Mobile, Tablet, Desktop)  
-✅ Interactive and Animated UI using modern React libraries  
-✅ Smooth Navigation and Section Transitions  
-✅ Dark/Light Theme Mode  
-✅ Projects Section with GitHub & Live Links  
-✅ Downloadable Resume Integration  
-✅ Contact Form with Email Integration  
-✅ Optimized Performance & SEO Friendly  
+## 📌 Why this project?  
+This portfolio is a digital representation of **who I am as a developer** — creative, passionate, and detail-oriented.  
+It highlights my technical expertise, professional experience and personal projects in an elegant, user-friendly interface.
 
 ---
 
-## 🧩 Tech Stack  
-
-| Category | Technologies |
-|-----------|---------------|
-| **Frontend** | React.js, HTML5, CSS3, JavaScript (ES6+), Tailwind CSS / SCSS |
-| **Animations** | Framer Motion / AOS |
-| **Deployment** | GitHub Pages |
-| **Version Control** | Git & GitHub |
+## ✨ Key Features  
+- ✅ Fully responsive design: mobile, tablet and desktop.  
+- ✅ Smooth, interactive UI with modern React techniques.  
+- ✅ Dark / Light theme toggle.  
+- ✅ Projects section with GitHub & live links.  
+- ✅ Downloadable resume integration.  
+- ✅ Contact form (email integration).  
+- ✅ Optimised for performance & SEO.  
 
 ---
 
-## 📂 Folder Structure  
+## 🛠 Tech Stack  
+| Layer         | Technologies                                                   |
+|---------------|---------------------------------------------------------------|
+| Frontend      | React.js, HTML5, CSS3, JavaScript (ES6+)                      |
+| Styling       | Tailwind CSS / SCSS                                            |
+| Animations    | Framer Motion / AOS                                            |
+| Deployment    | Vercel / GitHub Pages                                          |
+| Version Ctrl  | Git & GitHub                                                   |
 
+---
+
+## 🗂 Project Structure  
 ```
 
 Personal_Portfolio_by_React/
@@ -59,79 +54,56 @@ Personal_Portfolio_by_React/
 
 ---
 
-## 🧠 What I Learned  
-
-💡 Structuring and managing a React project efficiently  
-💡 Implementing reusable and modular components  
-💡 Enhancing user experience with animations and transitions  
-💡 Deploying a React project seamlessly to GitHub Pages  
+## 🎓 What I Learned  
+- Effective structuring of a React project for scalability.  
+- Creating modular, reusable components and maintaining clean architecture.  
+- Enhancing UX through animations, transitions and theme toggles.  
+- Seamless deployment of a React app to production.  
 
 ---
 
-## ⚙️ Installation & Setup  
-
-To run this project locally, follow these steps:
+## 🚀 Getting Started  
+To run this project locally:
 
 ```bash
-# Clone the repository
+# Clone the repo
 git clone https://github.com/AchiniPramo/Personal_Portfolio_by_React.git
 
-# Navigate to the project directory
+# Move into the project directory
 cd Personal_Portfolio_by_React
 
 # Install dependencies
 npm install
 
-# Run the development server
-npm start
+# Launch the development server
+npm run dev
 ````
 
-Your app will open at **[http://localhost:3000](http://localhost:3000)**
+## 🔭 Future Roadmap
+
+* [ ] Add blog or article section
+* [ ] Backend integration for contact form submissions
+* [ ] Add project filtering & search functionality
+* [ ] Internationalisation (i18n) support
+* [ ] Accessibility improvements (ARIA, keyboard nav etc.)
 
 ---
 
-## 📸 Screenshots
+## 👤 About the Author
 
-### 🏠 Home Section
-
-*(Add screenshot here)*
-
-### 💼 Projects Section
-
-*(Add screenshot here)*
-
-### 📞 Contact Section
-
-*(Add screenshot here)*
-
----
-
-## 🌟 Future Enhancements
-
-* Add blog or article section
-* Include backend integration for form submissions
-* Introduce project filtering and search features
-* Implement internationalization (i18n)
-
----
-
-## 🧑‍💻 Developed By
-
-**👩‍💻 Achini Pramodhya**
-🚀 Full-Stack Developer | UI/UX Enthusiast
-
+**Achini Pramodhya**
+Full-Stack Developer | UI/UX Enthusiast
 📧 [achinipramodhya@gmail.com](mailto:achinipramodhya@gmail.com)
-🔗 [LinkedIn](https://www.linkedin.com/in/achinipramodhya/)
-💻 [GitHub](https://github.com/AchiniPramo)
+🔗 [LinkedIn](https://www.linkedin.com/in/achinipramodhya/) | [GitHub](https://github.com/AchiniPramo)
 
 ---
 
-## 🪄 License
+## 📄 License
 
-This project is **open-source** and available under the [MIT License](LICENSE).
-
----
-
-### 💫 “Designing with passion. Developing with precision.”
+This project is open-source and available under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
 ---
+
+“Designing with passion. Developing with precision.”
+
+```
