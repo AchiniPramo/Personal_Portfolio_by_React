@@ -32,7 +32,8 @@ export default function About() {
     <section
       id="about"
       ref={revealRef}
-      className="relative py-24 bg-gradient-to-br from-purple-50 via-blue-50 to-cyan-50 dark:from-zinc-950 dark:via-blue-950 dark:to-purple-950 overflow-hidden"
+      className="relative py-24 overflow-hidden"
+      style={{ background: 'var(--bg)' }}
     >
       {/* Interactive Background */}
       <div

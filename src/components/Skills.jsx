@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useReveal from "../hooks/useReveal";
+import useTheme from "../hooks/useTheme";
 import {
   FiCode,
   FiServer,
@@ -239,19 +240,19 @@ function SkillCard({ icon, name, color, category }) {
   const getCategoryColor = () => {
     switch (category) {
       case "Frontend":
-        return { bg: "from-purple-500 to-pink-500", glow: "#a855f7", light: "rgba(168, 85, 247, 0.1)" };
+        return { glow: "var(--primary)", light: "rgba(124, 58, 237, 0.1)" };
       case "Backend":
-        return { bg: "from-blue-500 to-cyan-500", glow: "#3b82f6", light: "rgba(59, 130, 246, 0.1)" };
+        return { glow: "var(--secondary)", light: "rgba(6, 182, 212, 0.1)" };
       case "Database":
-        return { bg: "from-green-500 to-emerald-500", glow: "#10b981", light: "rgba(16, 185, 129, 0.1)" };
+        return { glow: "#10b981", light: "rgba(16, 185, 129, 0.1)" };
       case "Cloud":
-        return { bg: "from-orange-500 to-red-500", glow: "#f97316", light: "rgba(249, 115, 22, 0.1)" };
+        return { glow: "#f97316", light: "rgba(249, 115, 22, 0.1)" };
       case "DevOps":
-        return { bg: "from-cyan-500 to-blue-500", glow: "#06b6d4", light: "rgba(6, 182, 212, 0.1)" };
+        return { glow: "var(--accent)", light: "rgba(236, 72, 153, 0.1)" };
       case "Tools":
-        return { bg: "from-gray-500 to-slate-500", glow: "#6b7280", light: "rgba(107, 114, 128, 0.1)" };
+        return { glow: "var(--muted)", light: "rgba(107, 114, 128, 0.1)" };
       default:
-        return { bg: "from-indigo-500 to-purple-500", glow: "#8b5cf6", light: "rgba(139, 92, 246, 0.1)" };
+        return { glow: "var(--primary)", light: "rgba(124, 58, 237, 0.1)" };
     }
   };
 
@@ -285,9 +286,8 @@ function SkillCard({ icon, name, color, category }) {
 
       {/* Main card */}
       <div
-        className="relative w-full h-full rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 transition-all duration-500"
+        className="relative w-full h-full rounded-xl overflow-hidden backdrop-blur-sm border transition-all duration-500 card"
         style={{
-          background: `linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%)`,
           boxShadow: isHovered
             ? `inset 0 1px 2px rgba(255,255,255,0.1), 0 0 30px ${colors.glow}40, 0 0 60px ${colors.glow}20`
             : `inset 0 1px 2px rgba(255,255,255,0.05), 0 0 20px ${colors.glow}20`,
@@ -309,7 +309,10 @@ function SkillCard({ icon, name, color, category }) {
           </div>
 
           {/* Name */}
-          <span className="text-sm font-bold text-white text-center leading-tight">
+          <span 
+            className="text-sm font-bold text-center leading-tight"
+            style={{ color: 'var(--text)' }}
+          >
             {name}
           </span>
 
@@ -339,6 +342,9 @@ function SkillCard({ icon, name, color, category }) {
 }
 
 export default function Skills() {
+  const [theme] = useTheme();
+  const isDark = theme === 'dark';
+
   const skills = [
     { icon: "React", name: "React", category: "Frontend" },
     { icon: "Tailwind", name: "Tailwind CSS", category: "Frontend" },
@@ -366,7 +372,10 @@ export default function Skills() {
   ];
 
   return (
-    <div className="w-screen min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-black overflow-x-hidden py-20 px-0">
+    <div 
+      className="w-screen min-h-screen overflow-x-hidden py-20 px-0"
+      style={{ background: 'var(--bg)' }}
+    >
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(8)].map((_, i) => (
           <div
@@ -397,7 +406,12 @@ export default function Skills() {
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black mb-4 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
             Advanced Skills
           </h1>
-          <p className="text-gray-400 text-lg sm:text-xl">Professional expertise across modern technologies</p>
+          <p 
+            className="text-lg sm:text-xl"
+            style={{ color: 'var(--muted)' }}
+          >
+            Professional expertise across modern technologies
+          </p>
         </div>
       </div>
 
@@ -418,8 +432,18 @@ export default function Skills() {
             </div>
 
             {/* Gradient fade edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-slate-950 via-slate-950/50 to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-slate-950 via-slate-950/50 to-transparent z-10 pointer-events-none" />
+            <div 
+              className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r z-10 pointer-events-none" 
+              style={{
+                background: `linear-gradient(to right, var(--bg), rgba(0,0,0,0.5), transparent)`
+              }}
+            />
+            <div 
+              className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l z-10 pointer-events-none" 
+              style={{
+                background: `linear-gradient(to left, var(--bg), rgba(0,0,0,0.5), transparent)`
+              }}
+            />
           </div>
 
           {/* Second Row - Moving Left to Right */}
@@ -437,8 +461,18 @@ export default function Skills() {
             </div>
 
             {/* Gradient fade edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-slate-950 via-slate-950/50 to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-slate-950 via-slate-950/50 to-transparent z-10 pointer-events-none" />
+            <div 
+              className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r z-10 pointer-events-none" 
+              style={{
+                background: `linear-gradient(to right, var(--bg), rgba(0,0,0,0.5), transparent)`
+              }}
+            />
+            <div 
+              className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l z-10 pointer-events-none" 
+              style={{
+                background: `linear-gradient(to left, var(--bg), rgba(0,0,0,0.5), transparent)`
+              }}
+            />
           </div>
         </div>
 

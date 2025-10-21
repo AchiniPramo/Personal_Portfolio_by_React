@@ -40,9 +40,40 @@ body {
 /* utilities that pair with CSS variables */
 .card {
   background: var(--surface);
+  color: var(--text);
+  border: 1px solid rgba(0,0,0,0.1);
 }
+
+.dark .card {
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
 .muted {
   color: var(--muted);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.bg-primary {
+  background: var(--primary);
+}
+
+.bg-secondary {
+  background: var(--secondary);
+}
+
+.bg-accent {
+  background: var(--accent);
 }
 
 /* input/button helpers */
