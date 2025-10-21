@@ -1,39 +1,53 @@
-# 🌟 Personal Portfolio by React  
-[![GitHub forks](https://img.shields.io/github/forks/AchiniPramo/Personal_Portfolio_by_React?style=social)](https://github.com/AchiniPramo/Personal_Portfolio_by_React/network) [![GitHub stars](https://img.shields.io/github/stars/AchiniPramo/Personal_Portfolio_by_React?style=social)](https://github.com/AchiniPramo/Personal_Portfolio_by_React/stargazers) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)  
+<h1 align="center">🌟 Personal Portfolio by React</h1>
 
-A modern, responsive, visually-stunning **personal portfolio website**, built using **React.js**, to showcase skills, projects and professional journey with emphasis on UI/UX, interactivity and performance.
+<p align="center">
+  <em>A modern, responsive, and visually stunning portfolio website built with <strong>React.js</strong> — showcasing creativity, skill, and professionalism.</em>
+</p>
 
----
-
-## 📌 Why this project?  
-This portfolio is a digital representation of **who I am as a developer** — creative, passionate, and detail-oriented.  
-It highlights my technical expertise, professional experience and personal projects in an elegant, user-friendly interface.
-
----
-
-## ✨ Key Features  
-- ✅ Fully responsive design: mobile, tablet and desktop.  
-- ✅ Smooth, interactive UI with modern React techniques.  
-- ✅ Dark / Light theme toggle.  
-- ✅ Projects section with GitHub & live links.  
-- ✅ Downloadable resume integration.  
-- ✅ Contact form (email integration).  
-- ✅ Optimised for performance & SEO.  
+<p align="center">
+  <a href="https://github.com/AchiniPramo/Personal_Portfolio_by_React/stargazers"><img src="https://img.shields.io/github/stars/AchiniPramo/Personal_Portfolio_by_React?style=flat-square&color=gold" alt="Stars"></a>
+  <a href="https://github.com/AchiniPramo/Personal_Portfolio_by_React/network/members"><img src="https://img.shields.io/github/forks/AchiniPramo/Personal_Portfolio_by_React?style=flat-square&color=blue" alt="Forks"></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?style=flat-square" alt="License"></a>
+  <a href="https://react.dev/"><img src="https://img.shields.io/badge/Built%20With-React.js-61DAFB?style=flat-square&logo=react&logoColor=white" alt="React"></a>
+</p>
 
 ---
 
-## 🛠 Tech Stack  
-| Layer         | Technologies                                                   |
-|---------------|---------------------------------------------------------------|
-| Frontend      | React.js, HTML5, CSS3, JavaScript (ES6+)                      |
-| Styling       | Tailwind CSS / SCSS                                            |
-| Animations    | Framer Motion / AOS                                            |
-| Deployment    | Vercel / GitHub Pages                                          |
-| Version Ctrl  | Git & GitHub                                                   |
+## 💡 Overview  
+
+This project is a personal portfolio website that reflects my **skills, projects, and professional journey** as a **Full-Stack Developer**.  
+Designed with elegance and interactivity in mind, it delivers a seamless user experience across all devices.  
+
+> 💬 “Showcasing creativity through design and precision through development.”
 
 ---
 
-## 🗂 Project Structure  
+## ✨ Features  
+
+- 🎨 **Modern & Responsive Design** – Works perfectly on all screen sizes.  
+- ⚡ **Smooth Animations** – Powered by Framer Motion for engaging visuals.  
+- 🌗 **Dark / Light Mode** – Toggle themes effortlessly.  
+- 💼 **Project Showcase** – With direct GitHub and Live Demo links.  
+- 📄 **Downloadable Resume** – Easily accessible to recruiters.  
+- 📬 **Contact Form Integration** – For easy communication.  
+- 🚀 **Optimized Performance** – Fast loading and SEO-friendly.  
+
+---
+
+## 🛠️ Tech Stack  
+
+| Layer | Technologies |
+|-------|---------------|
+| **Frontend** | React.js, HTML5, CSS3, JavaScript (ES6+) |
+| **Styling** | Tailwind CSS / SCSS |
+| **Animations** | Framer Motion, AOS |
+| **Deployment** | Vercel / GitHub Pages |
+| **Version Control** | Git & GitHub |
+
+---
+
+## 📁 Project Structure  
+
 ```
 
 Personal_Portfolio_by_React/
@@ -54,56 +68,77 @@ Personal_Portfolio_by_React/
 
 ---
 
-## 🎓 What I Learned  
-- Effective structuring of a React project for scalability.  
-- Creating modular, reusable components and maintaining clean architecture.  
-- Enhancing UX through animations, transitions and theme toggles.  
-- Seamless deployment of a React app to production.  
-
----
-
 ## 🚀 Getting Started  
-To run this project locally:
+
+To set up and run this project locally:  
 
 ```bash
-# Clone the repo
+# Clone this repository
 git clone https://github.com/AchiniPramo/Personal_Portfolio_by_React.git
 
-# Move into the project directory
+# Navigate to project directory
 cd Personal_Portfolio_by_React
 
 # Install dependencies
 npm install
 
-# Launch the development server
-npm run dev
+# Run the development server
+npm start
 ````
 
-## 🔭 Future Roadmap
+---
 
-* [ ] Add blog or article section
-* [ ] Backend integration for contact form submissions
-* [ ] Add project filtering & search functionality
-* [ ] Internationalisation (i18n) support
-* [ ] Accessibility improvements (ARIA, keyboard nav etc.)
+## 🎓 What I Learned
+
+✅ Structuring a React project for maintainability
+✅ Building modular, reusable components
+✅ Enhancing UX with animations and transitions
+✅ Deploying React apps with GitHub Pages / Vercel
+✅ Managing responsive design effectively
+
+---
+
+## 📸 Screenshots
+
+> *(Add screenshots or GIFs showcasing your UI — Home, Projects, Contact sections, etc.)*
+
+| Home                                | Projects                                    | Contact                                   |
+| ----------------------------------- | ------------------------------------------- | ----------------------------------------- |
+| ![Home Screenshot](assets/home.png) | ![Projects Screenshot](assets/projects.png) | ![Contact Screenshot](assets/contact.png) |
+
+---
+
+## 🌱 Future Roadmap
+
+* [ ] ✍️ Add a blog or article section
+* [ ] ⚙️ Backend integration for contact form
+* [ ] 🔍 Project filtering & search features
+* [ ] 🌐 Multilingual support (i18n)
+* [ ] ♿ Accessibility enhancements (ARIA, keyboard nav)
 
 ---
 
 ## 👤 About the Author
 
-**Achini Pramodhya**
-Full-Stack Developer | UI/UX Enthusiast
+**👩‍💻 Achini Pramodhya**
+✨ Full-Stack Developer | UI/UX Enthusiast
+
 📧 [achinipramodhya@gmail.com](mailto:achinipramodhya@gmail.com)
-🔗 [LinkedIn](https://www.linkedin.com/in/achinipramodhya/) | [GitHub](https://github.com/AchiniPramo)
+🔗 [LinkedIn](https://www.linkedin.com/in/achinipramodhya/) • [GitHub](https://github.com/AchiniPramo)
 
 ---
 
-## 📄 License
+## 📜 License
 
-This project is open-source and available under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License**.
+You are free to use, modify, and distribute it under the terms of the license.
 
 ---
 
-“Designing with passion. Developing with precision.”
+<p align="center">
+  <i>“Designing with passion. Developing with precision.”</i>  
+</p>
 
-```
+<p align="center">
+  <img src="https://raw.githubusercontent.com/AchiniPramo/Personal_Portfolio_by_React/main/public/assets/animation.gif" width="400" alt="Portfolio animation">
+</p>
