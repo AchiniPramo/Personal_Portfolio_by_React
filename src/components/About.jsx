@@ -107,187 +107,41 @@ export default function About() {
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-500" />
               <div className="relative bg-white/90 dark:bg-zinc-900/90 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-gray-200/50 dark:border-zinc-700/50 hover:scale-105 transition-all duration-500">
-                <div className="flex items-center gap-4 mb-6">
+                <div className="flex items-center gap-4 mb-4">
                   <div className="p-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl">
                     <FiZap className="text-white text-xl" />
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Innovator & Explorer</h3>
                 </div>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
-                  Passionate fullstack developer transforming ideas into elegant digital solutions.
-                  Crafting scalable web applications with cutting-edge technologies, continuously pushing boundaries
-                  through AI integration, advanced architectures, and innovative problem-solving.
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  I build clean, scalable web apps that feel fast and delightful. I love turning ideas into polished products with modern stacks and a sharp eye for detail.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Condensed Philosophy */}
-          <div className="max-w-3xl mx-auto mb-12">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-cyan-500/20 rounded-2xl blur-xl" />
-              <div className="relative bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl rounded-2xl p-8 shadow-xl border border-gray-200/50 dark:border-zinc-700/50">
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600 mb-4">
-                    💡 Philosophy
-                  </h3>
-                  <div className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                    <p className="mb-3">
-                      Technology transforms problems into solutions. Every line of code creates meaningful impact.
-                    </p>
-                    <p className="font-semibold text-purple-600 dark:text-purple-400 italic">
-                      "Code is poetry in motion. Innovation bridges imagination and reality."
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Enhanced Expertise Grid */}
-        <div className="relative mb-20">
-          <div className="text-center mb-12">
-            <h3 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600 mb-4">
-              Core Expertise
-            </h3>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Mastering the full spectrum of modern development technologies
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Creative Snapshot (short and visual) */}
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
             {[
-              {
-                icon: FiCode,
-                title: "Frontend",
-                description: "React, TypeScript, Next.js",
-                color: "from-blue-500 to-cyan-500",
-                glowColor: "from-blue-400/20 to-cyan-400/20"
-              },
-              {
-                icon: FiServer,
-                title: "Backend",
-                description: "Node.js, Python, Java",
-                color: "from-purple-500 to-pink-500",
-                glowColor: "from-purple-400/20 to-pink-400/20"
-              },
-              {
-                icon: FiDatabase,
-                title: "Databases",
-                description: "MongoDB, PostgreSQL, Redis",
-                color: "from-green-500 to-emerald-500",
-                glowColor: "from-green-400/20 to-emerald-400/20"
-              },
-              {
-                icon: FiCloud,
-                title: "Cloud & DevOps",
-                description: "AWS, Docker, CI/CD",
-                color: "from-orange-500 to-red-500",
-                glowColor: "from-orange-400/20 to-red-400/20"
-              }
-            ].map((expertise, index) => (
-              <div
-                key={expertise.title}
-                className="group relative"
-                style={{ animationDelay: `${index * 200}ms` }}
-              >
-                <div className={`absolute inset-0 bg-gradient-to-r ${expertise.glowColor} rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
-                <div className="relative p-6 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-gray-200/50 dark:border-zinc-700/50 group-hover:border-purple-300/50 dark:group-hover:border-purple-600/50">
-                  <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${expertise.color} mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    <expertise.icon className="text-white text-xl" />
+              { icon: FiCode, title: "Frontend", desc: "React • TypeScript • Motion", color: "from-blue-500 to-cyan-500" },
+              { icon: FiServer, title: "Backend", desc: "Node.js • APIs • Auth", color: "from-purple-500 to-pink-500" },
+              { icon: FiCloud, title: "DevOps", desc: "AWS • Docker • CI/CD", color: "from-orange-500 to-red-500" }
+            ].map(({ icon: Icon, title, desc, color }) => (
+              <div key={title} className="group relative">
+                <div className={`absolute inset-0 bg-gradient-to-r ${color} rounded-2xl blur-xl opacity-10 group-hover:opacity-20 transition-opacity duration-500`} />
+                <div className="relative p-6 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-gray-200/50 dark:border-zinc-700/50">
+                  <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${color} mb-3 shadow-lg`}>
+                    <Icon className="text-white text-xl" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                    {expertise.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                    {expertise.description}
-                  </p>
+                  <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-1">{title}</h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{desc}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Interactive Stats Section */}
-        <div className="relative mb-20">
-          <div className="text-center mb-12">
-            <h3 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600 mb-4">
-              Journey in Numbers
-            </h3>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
-              Quantifying the impact of passion and persistence
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { icon: FiCode, value: "50+", label: "Projects", color: "from-blue-500 to-cyan-500" },
-              { icon: FiLayers, value: "3+", label: "Years", color: "from-purple-500 to-pink-500" },
-              { icon: FiZap, value: "15+", label: "Tech Stack", color: "from-green-500 to-emerald-500" },
-              { icon: FiGitBranch, value: "1000+", label: "Commits", color: "from-orange-500 to-red-500" }
-            ].map((stat, index) => (
-              <div key={stat.label} className="group relative text-center" style={{ animationDelay: `${index * 200}ms` }}>
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative p-6 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-gray-200/50 dark:border-zinc-700/50 group-hover:border-purple-300/50 dark:group-hover:border-purple-600/50">
-                  <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${stat.color} mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300 mx-auto`}>
-                    <stat.icon className="text-white text-2xl" />
-                  </div>
-                  <div className="text-3xl font-black text-gray-900 dark:text-white mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm font-bold text-gray-700 dark:text-gray-300">
-                    {stat.label}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Enhanced Vision & Values */}
-        <div className="relative mb-20">
-          <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600 mb-4">
-              Vision & Values
-            </h3>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              Beyond code: A commitment to excellence, innovation, and meaningful impact
-            </p>
-          </div>
-
-          {/* Impact Statement */}
-          <div className="max-w-4xl mx-auto">
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border border-gray-200/50 dark:border-zinc-700/50 hover:scale-105 transition-all duration-500">
-                <div className="text-center">
-                  <h3 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600 mb-6">
-                    Mission & Values
-                  </h3>
-                  <div className="space-y-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                    <p className="font-medium">
-                      Architecting digital solutions that transcend expectations—where innovation meets human-centered design.
-                    </p>
-                    <div className="grid md:grid-cols-2 gap-4 mt-6">
-                      {[
-                        "Innovation over imitation",
-                        "Quality over quantity",
-                        "Collaboration over competition",
-                        "Learning over knowing"
-                      ].map((value, index) => (
-                        <div key={index} className="flex items-center gap-3 justify-center">
-                          <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full" />
-                          <span className="text-gray-700 dark:text-gray-300 font-medium">{value}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Trimmed sections above keep the page concise */}
 
         {/* Enhanced Call-to-Action */}
         <div className="text-center">
