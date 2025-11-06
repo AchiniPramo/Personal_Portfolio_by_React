@@ -17,15 +17,15 @@ export default function Hero() {
 
   return (
     <section
+      id="hero"
       ref={ref}
       className={`reveal ${
         visible ? "visible" : ""
-      } min-h-screen relative overflow-hidden flex items-center`}
+      } h-screen relative overflow-hidden flex items-center`}
     >
       {/* Enhanced Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-zinc-950 dark:via-blue-950 dark:to-purple-950" />
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px] animate-grid-move" />
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 dark:via-zinc-900/60 to-transparent animate-shimmer" />
       </div>
 
@@ -50,7 +50,7 @@ export default function Hero() {
         <div className="grid lg:grid-cols-[1.5fr,1fr] gap-12 items-center">
           <div className="space-y-8">
             {/* Text Content with Typewriter Effect */}
-            <div className="space-y-4">
+            <div className="space-y-4 portrait-center">
               <h2 className="text-lg font-medium text-blue-600 dark:text-blue-400 animate-fade-in-up">
                 Welcome to my creative portfolio
               </h2>
@@ -69,7 +69,7 @@ export default function Hero() {
             </div>
 
             {/* Enhanced Tech Stack Pills */}
-            <div className="flex flex-wrap gap-3 animate-fade-in-up animation-delay-600">
+            <div className="flex flex-wrap gap-3 animate-fade-in-up animation-delay-600 portrait-justify-center">
               {techStack.map((tech, index) => (
                 <div
                   key={tech.label}
@@ -83,7 +83,7 @@ export default function Hero() {
             </div>
 
             {/* Call to Action */}
-            <div className="flex flex-wrap gap-4 animate-fade-in-up animation-delay-800">
+            <div className="flex flex-wrap gap-4 animate-fade-in-up animation-delay-800 portrait-justify-center">
               <a
                 href="#projects"
                 className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-full font-medium shadow-lg shadow-purple-500/25 transition-all hover:scale-105 hover:shadow-xl"
@@ -96,10 +96,8 @@ export default function Hero() {
               >
                 Let's Connect
               </a>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex gap-6 text-2xl text-gray-600 dark:text-gray-400 animate-fade-in-up animation-delay-1000">
+ {/* Social Links */}
+            <div className="flex gap-6 text-2xl text-gray-600 dark:text-gray-400 animate-fade-in-up animation-delay-1000 portrait-justify-center">
               <a
                 aria-label="GitHub"
                 href="https://github.com/AchiniPramo"
@@ -123,7 +121,9 @@ export default function Hero() {
               </a>
             </div>
           </div>
+            </div>
 
+           
           {/* Creative Fullstack Visual */}
           <div className="relative flex items-center justify-center min-h-[500px] animate-fade-in-up animation-delay-600">
             {/* Layered Architecture Visualization */}
@@ -245,6 +245,15 @@ export default function Hero() {
         .animation-delay-600 { animation-delay: 0.6s; }
         .animation-delay-800 { animation-delay: 0.8s; }
         .animation-delay-1000 { animation-delay: 1s; }
+
+        @media (orientation: portrait) {
+          .portrait-center {
+            text-align: center;
+          }
+          .portrait-justify-center {
+            justify-content: center;
+          }
+        }
       `}</style>
     </section>
   );
