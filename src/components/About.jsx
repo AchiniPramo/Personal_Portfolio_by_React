@@ -15,7 +15,7 @@ const AboutSection = () => {
     {
       title: "About Me",
       icon: "👨‍💻",
-      bgImage: "src/assets/about-me.jpg",
+      bgImage: "/assets/about-me.jpg",
       content: (
         <div className="space-y-4">
           <p className="text-gray-100 leading-relaxed">
@@ -27,7 +27,7 @@ const AboutSection = () => {
     {
       title: "Education",
       icon: "🎓",
-      bgImage: "src/assets/education.jpg",
+      bgImage: "/assets/education.jpg",
       content: (
         <div className="space-y-3">
           <ul className="space-y-3 text-gray-100">
@@ -50,7 +50,7 @@ const AboutSection = () => {
     {
       title: "As A Person",
       icon: "🌟",
-      bgImage: "src/assets/person.jpg",
+      bgImage: "/assets/person.jpg",
       content: (
         <ul className="space-y-3 text-gray-100">
           <li className="flex items-start gap-3">
@@ -87,7 +87,7 @@ const AboutSection = () => {
     {
       title: "Skills",
       icon: "💡",
-      bgImage: "src/assets/skills.jpg",
+      bgImage: "/assets/skills.jpg",
       content: (
         <div className="space-y-5">
           <div>
@@ -146,7 +146,7 @@ const AboutSection = () => {
     {
       title: "Future Plans",
       icon: "🚀",
-      bgImage: "src/assets/future-plan.jpg",
+      bgImage: "/assets/future-plan.jpg",
       content: (
         <div className="space-y-4 text-gray-100">
           <p className="leading-relaxed">Looking ahead, I'm excited about several ambitious goals:</p>
