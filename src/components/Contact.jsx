@@ -84,9 +84,8 @@ export default function Contact() {
   ];
 
   const socialLinks = [
-    { icon: FiGithub, href: 'https://github.com/username', label: 'GitHub' },
-    { icon: FiLinkedin, href: 'https://linkedin.com/in/username', label: 'LinkedIn' },
-    { icon: FiTwitter, href: 'https://twitter.com/username', label: 'Twitter' }
+    { icon: FiGithub, href: 'https://github.com/AchiniPramo', label: 'GitHub' },
+    { icon: FiLinkedin, href: 'https://www.linkedin.com/in/achini-pramodhya-24a555318/', label: 'LinkedIn' },
   ];
 
   return (
