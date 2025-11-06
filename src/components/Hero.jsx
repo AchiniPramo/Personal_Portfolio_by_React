@@ -125,30 +125,30 @@ export default function Hero() {
 
            
           {/* Creative Fullstack Visual */}
-          <div className="relative flex items-center justify-center min-h-[500px] animate-fade-in-up animation-delay-600">
+          <div className="relative flex items-center justify-center min-h-[300px] sm:min-h-[400px] md:min-h-[500px] animate-fade-in-up animation-delay-600">
             {/* Layered Architecture Visualization */}
-            <div className="relative w-96 h-96">
+            <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[400px] lg:h-[400px] xl:w-[450px] xl:h-[450px]">
               {/* Database Layer */}
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-64 h-20 bg-gradient-to-r from-green-400 to-emerald-500 rounded-lg shadow-2xl animate-slide-up">
+              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-48 h-16 sm:w-56 sm:h-18 md:w-64 md:h-20 bg-gradient-to-r from-green-400 to-emerald-500 rounded-lg shadow-2xl animate-slide-up">
                 <div className="flex items-center justify-center h-full">
-                  <FiDatabase className="text-white text-3xl mr-2" />
-                  <span className="text-white font-bold">Database Layer</span>
+                  <FiDatabase className="text-white text-2xl md:text-3xl mr-2" />
+                  <span className="text-white font-bold text-sm md:text-base">Database Layer</span>
                 </div>
               </div>
 
               {/* Backend Layer */}
-              <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 w-72 h-24 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg shadow-2xl animate-slide-up animation-delay-200">
+              <div className="absolute bottom-16 sm:bottom-20 left-1/2 transform -translate-x-1/2 w-54 h-18 sm:w-64 sm:h-22 md:w-72 md:h-24 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg shadow-2xl animate-slide-up animation-delay-200">
                 <div className="flex items-center justify-center h-full">
-                  <FiServer className="text-white text-3xl mr-2" />
-                  <span className="text-white font-bold">Backend Logic</span>
+                  <FiServer className="text-white text-2xl md:text-3xl mr-2" />
+                  <span className="text-white font-bold text-sm md:text-base">Backend Logic</span>
                 </div>
               </div>
 
               {/* Frontend Layer */}
-              <div className="absolute bottom-44 left-1/2 transform -translate-x-1/2 w-80 h-28 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg shadow-2xl animate-slide-up animation-delay-400">
+              <div className="absolute bottom-32 sm:bottom-40 md:bottom-44 left-1/2 transform -translate-x-1/2 w-60 h-20 sm:w-72 sm:h-24 md:w-80 md:h-28 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg shadow-2xl animate-slide-up animation-delay-400">
                 <div className="flex items-center justify-center h-full">
-                  <FiLayers className="text-white text-3xl mr-2" />
-                  <span className="text-white font-bold">Frontend UI</span>
+                  <FiLayers className="text-white text-2xl md:text-3xl mr-2" />
+                  <span className="text-white font-bold text-sm md:text-base">Frontend UI</span>
                 </div>
               </div>
 
