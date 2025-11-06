@@ -15,7 +15,7 @@ const AboutSection = () => {
     {
       title: "About Me",
       icon: "👨‍💻",
-      bgImage: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop",
+      bgImage: "src/assets/about-me.jpg",
       content: (
         <div className="space-y-4">
           <p className="text-gray-100 leading-relaxed">
@@ -27,7 +27,7 @@ const AboutSection = () => {
     {
       title: "Education",
       icon: "🎓",
-      bgImage: "https://plus.unsplash.com/premium_photo-1682125773446-259ce64f9dd7?auto=format&fit=crop&w=800&h=600&q=80",
+      bgImage: "src/assets/education.jpg",
       content: (
         <div className="space-y-3">
           <ul className="space-y-3 text-gray-100">
@@ -50,7 +50,7 @@ const AboutSection = () => {
     {
       title: "As A Person",
       icon: "🌟",
-      bgImage: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
+      bgImage: "src/assets/person.jpg",
       content: (
         <ul className="space-y-3 text-gray-100">
           <li className="flex items-start gap-3">
@@ -87,7 +87,7 @@ const AboutSection = () => {
     {
       title: "Skills",
       icon: "💡",
-      bgImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop",
+      bgImage: "src/assets/skills.jpg",
       content: (
         <div className="space-y-5">
           <div>
@@ -146,7 +146,7 @@ const AboutSection = () => {
     {
       title: "Future Plans",
       icon: "🚀",
-      bgImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop",
+      bgImage: "src/assets/future-plan.jpg",
       content: (
         <div className="space-y-4 text-gray-100">
           <p className="leading-relaxed">Looking ahead, I'm excited about several ambitious goals:</p>
