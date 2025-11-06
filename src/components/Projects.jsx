@@ -112,6 +112,7 @@ const ProjectsSection = () => {
   tech: ['Spring Boot', 'MySQL', 'HTML', 'CSS', 'JavaScript', 'Bootstrap'],
   details: 'Developed a full-stack finance management application that helps users monitor their financial activities, view reports, and manage transactions securely.',
   image: '/assets/cashflowr.jpg',
+  live: 'https://youtu.be/ylVvGL7jzUo?si=Eh38G-YOiFheA3oK',
   github: 'https://github.com/AchiniPramo/CashFlowr.git',
   gradient: 'from-indigo-500 to-purple-500',
   features: [
@@ -129,6 +130,7 @@ const ProjectsSection = () => {
   tech: ['Spring Boot', 'MySQL', 'HTML', 'CSS', 'JavaScript', 'Bootstrap'],
   details: 'Developed a full-stack e-commerce web application with secure user authentication, product management, shopping cart logic, and payment simulation.',
   image: '/assets/ecommerce.jpg',
+  live: 'https://youtu.be/tNaiAbQ-0lM?si=l3JndN8p7UT-pp-k',
   github: 'https://github.com/AchiniPramo/Ecommerce.git',
   gradient: 'from-red-500 to-orange-500',
   features: ['Product Catalog', 'Shopping Cart', 'Checkout Simulation', 'Admin Panel', 'Responsive Design']
@@ -193,6 +195,7 @@ const ProjectsSection = () => {
     tech: ['HTML', 'CSS'],
     details: 'Built a simple calculator UI using CSS grid and button layout principles.',
     image: '/assets/calculator.jpg',
+    live: 'https://calculator-assignment-7.vercel.app/',
     github: 'https://github.com/AchiniPramo/Calculator',
     gradient: 'from-gray-500 to-blue-400',
     features: ['Clean Layout', 'User-Friendly Interface']
@@ -297,7 +300,6 @@ const ProjectsSection = () => {
   tech: ['HTML', 'CSS'],
   details: 'Completed multiple case study exercises that explore advanced HTML semantic structure and responsive CSS techniques.',
   image: '/assets/html-css-cases.jpg',
-  live: 'https://html-css-cases.vercel.app/',
   github: 'https://github.com/AchiniPramo/HTML-CSS-Cases.git',
   gradient: 'from-teal-500 to-green-500',
   features: [
@@ -663,26 +665,32 @@ const ProjectsSection = () => {
               </div>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <a
-                href={selectedProject.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 px-5 py-3 sm:px-6 sm:py-3 rounded-xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 transition-all duration-300 hover:scale-105 font-medium text-sm sm:text-base"
-              >
-                <FiGithub size={18} />
-                View Code
-              </a>
-              <a
-                href={selectedProject.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 px-5 py-3 sm:px-6 sm:py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-pink-500 hover:from-indigo-600 hover:to-pink-600 text-white transition-all duration-300 hover:scale-105 font-medium text-sm sm:text-base"
-              >
-                <FiExternalLink size={18} />
-                Live Demo
-              </a>
-            </div>
+           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+  {/* GitHub Button - Always Display */}
+  <a
+    href={selectedProject.github}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex-1 flex items-center justify-center gap-2 px-5 py-3 sm:px-6 sm:py-3 rounded-xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 transition-all duration-300 hover:scale-105 font-medium text-sm sm:text-base"
+  >
+    <FiGithub size={18} />
+    View Code
+  </a>
+
+  {/* Live Demo Button - Only display if live link exists */}
+  {selectedProject.live && (
+    <a
+      href={selectedProject.live}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex-1 flex items-center justify-center gap-2 px-5 py-3 sm:px-6 sm:py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-pink-500 hover:from-indigo-600 hover:to-pink-600 text-white transition-all duration-300 hover:scale-105 font-medium text-sm sm:text-base"
+    >
+      <FiExternalLink size={18} />
+      Live Demo
+    </a>
+  )}
+</div>
+
           </div>
         )}
       </div>
