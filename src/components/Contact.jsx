@@ -90,38 +90,38 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
+    <section id="contact" className="py-12 sm:py-16 lg:py-24 relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/40 via-teal-50/30 to-cyan-50/40 dark:from-emerald-950/20 dark:via-teal-950/10 dark:to-cyan-950/20" />
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-emerald-400/20 to-teal-400/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-cyan-400/15 to-blue-400/15 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 bg-gradient-to-r from-emerald-400/20 to-teal-400/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-24 h-24 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-72 lg:h-72 bg-gradient-to-r from-cyan-400/15 to-blue-400/15 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-100 to-teal-100 dark:from-emerald-900/50 dark:to-teal-900/50 mb-6">
-            <FiMail className="text-emerald-600 dark:text-emerald-400" />
-            <span className="text-sm font-medium text-emerald-700 dark:text-emerald-300">Let's Connect</span>
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-emerald-100 to-teal-100 dark:from-emerald-900/50 dark:to-teal-900/50 mb-4 sm:mb-6">
+            <FiMail className="text-emerald-600 dark:text-emerald-400" size={16} />
+            <span className="text-xs sm:text-sm font-medium text-emerald-700 dark:text-emerald-300">Let's Connect</span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 mb-6">
             Get In Touch
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Ready to bring your ideas to life? Let's collaborate and create something amazing together.
             I'm always excited to discuss new opportunities and innovative projects.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
           {/* Contact Form */}
           <div className="order-2 lg:order-1">
             <div className="relative">
               {/* Form Background */}
               <div className="absolute inset-0 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-3xl border border-white/20 dark:border-zinc-800/50" />
 
-              <div className="relative p-8 lg:p-10">
+              <div className="relative p-6 sm:p-8 lg:p-10">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Name Field */}
                   <div className="relative">
