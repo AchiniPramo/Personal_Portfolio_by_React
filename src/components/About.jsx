@@ -15,7 +15,7 @@ const AboutSection = () => {
     {
       title: "About Me",
       icon: "👨‍💻",
-      bgImage: "/public/assets/about-me.jpg",
+      bgImage: "/assets/about-me.jpg",
       content: (
         <div className="space-y-4">
           <p className="text-gray-100 leading-relaxed">
